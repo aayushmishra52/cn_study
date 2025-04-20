@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Bank Solutions - Computer Networks</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .solution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        .solution-table th, .solution-table td {
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .solution-table th {
+            background-color: var(--accent-color);
+            color: var(--text-color-inverse);
+        }
+        .solution-table tr:nth-child(even) {
+            background-color: var(--bg-color-secondary);
+        }
+        .ip-address {
+            font-family: monospace;
+            background-color: var(--bg-color-secondary);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .subnet-mask {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+        .network-diagram {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .algorithm-step {
+            margin-bottom: 10px;
+            padding: 8px;
+            background-color: var(--bg-color-secondary);
+        }
+        /* Accordion Styles */
+        .topic-content {
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+        }
+        .topic-header {
+            cursor: pointer;
+        }
+.topic-header {
+    cursor: pointer;
+    border-left: 3px solid var(--accent-color);
+    border-radius: 3px;
+}
+        .protocol-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .protocol-box {
+            padding: 15px;
+            background-color: var(--bg-color-secondary);
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .protocol-box h5 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+        .category-header {
+            margin-top: 30px;
+            padding: 10px 15px;
+            background-color: var(--accent-color-light);
+            border-radius: 5px;
+            color: var(--text-color);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h1>Computer Networks</h1>
+            </div>
+            <div class="theme-toggle">
+                <span class="toggle-icon"></span>
+            </div>
+        </header>
+
+        <section class="module-header">
+            <h2>Question Bank Solutions</h2>
+            <a href="index.html" class="back-button">← Back to Modules</a>
+        </section>
+
+        <section class="content-section">
+            <div class="module-content">
+                <!-- Network Fundamentals Category -->
+                <div class="category-header">Network Fundamentals</div>
+                
+                <!-- Question 1: Computer Network Definition -->
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Computer Network Definition</h3>
+                        <span class="toggle-icon">+</span>     
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <p class="question"><strong>Question:</strong> Define a computer network and explain its key characteristics.</p>
+                            <div class="solution">
+                                <h4>Solution:</h4>
+                                <p>A computer network is a set of interconnected computing devices that can exchange data and share resources with each other.</p>
+                                
+                                <h5>Key Characteristics of Computer Networks:</h5>
+                                <ul>
+                                    <li><strong>Resource Sharing:</strong> Networks enable sharing of hardware (printers, storage) and software resources among connected devices.</li>
+                                    <li><strong>Communication:</strong> Networks facilitate data exchange between devices using standardized protocols.</li>
+                                    <li><strong>Distributed Processing:</strong> Tasks can be distributed across multiple devices to improve efficiency and performance.</li>
+                                    <li><strong>Reliability:</strong> Networks can provide redundancy and fault tolerance through alternative communication paths.</li>
+                                    <li><strong>Scalability:</strong> Well-designed networks can grow to accommodate additional devices and increased traffic.</li>
+                                    <li><strong>Security:</strong> Networks implement various mechanisms to protect data and control access to resources.</li>
+                                </ul>
+                                
+                                <h5>Components of Computer Networks:</h5>
+                                <ul>
+                                    <li><strong>Hardware:</strong> Devices (computers, servers), transmission media (cables, wireless), and connecting devices (routers, switches).</li>
+                                    <li><strong>Software:</strong> Operating systems, network protocols, applications, and network management tools.</li>
+                                    <li><strong>Protocols:</strong> Rules that govern data communication, such as TCP/IP, HTTP, FTP, etc.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container network-definition-animation">
+                                <svg viewBox="0 0 300 200" class="network-definition-svg">
+                                    <!-- Central Hub/Switch -->
+                                    <circle cx="150" cy="100" r="20" class="network-hub"></circle>
+                                    <text x="150" y="105" class="hub-text" text-anchor="middle">Hub</text>
+                                    
+                                    <!-- Connected Devices -->
+                                    <rect x="40" y="40" width="30" height="25" rx="2" class="device"></rect>
+                                    <text x="55" y="80" class="device-label" text-anchor="middle">PC</text>
+                                    
+                                    <rect x="230" y="40" width="30" height="25" rx="2" class="device"></rect>
+                                    <text x="245" y="80" class="device-label" text-anchor="middle">Server</text>
+                                    
+                                    <rect x="40" y="150" width="30" height="25" rx="2" class="device"></rect>
+                                    <text x="55" y="190" class="device-label" text-anchor="middle">Laptop</text>
+                                    
+                                    <rect x="230" y="150" width="25" height="30" rx="2" class="device"></rect>
+                                    <text x="242" y="190" class="device-label" text-anchor="middle">Printer</text>
+                                    
+                                    <!-- Connection Lines -->
+                                    <line x1="70" y1="52" x2="132" y2="90" stroke="var(--accent-color)" stroke-width="2"></line>
+                                    <line x1="230" y1="52" x2="168" y2="90" stroke="var(--accent-color)" stroke-width="2"></line>
+                                    <line x1="70" y1="162" x2="132" y2="110" stroke="var(--accent-color)" stroke-width="2"></line>
+                                    <line x1="230" y1="165" x2="168" y2="110" stroke="var(--accent-color)" stroke-width="2"></line>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 2: Network Types -->
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Network Types: LAN, MAN, WAN</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <p class="question"><strong>Question:</strong> Compare and contrast the three main types of networks based on geographical scope: LAN, MAN, and WAN.</p>
+                            <div class="solution">
+                                <h4>Solution:</h4>
+                                
+                                <div class="protocol-comparison">
+                                    <div class="protocol-box">
+                                        <h5>Local Area Network (LAN)</h5>
+                                        <ul>
+                                            <li><strong>Geographical Scope:</strong> Limited area such as a home, office, building, or campus</li>
+                                            <li><strong>Distance:</strong> Typically spans up to 1-2 kilometers</li>
+                                            <li><strong>Ownership:</strong> Usually owned, controlled, and managed by a single organization</li>
+                                            <li><strong>Speed:</strong> High data transfer rates (100 Mbps to 10 Gbps)</li>
+                                            <li><strong>Transmission Media:</strong> Twisted pair cables, coaxial cables, fiber optics, wireless</li>
+                                            <li><strong>Devices:</strong> Computers, printers, switches, access points</li>
+                                            <li><strong>Examples:</strong> Office networks, home networks, school networks</li>
+                                        </ul>
+                                    </div>
+                                    <div class="protocol-box">
+                                        <h5>Metropolitan Area Network (MAN)</h5>
+                                        <ul>
+                                            <li><strong>Geographical Scope:</strong> City or large campus</li>
+                                            <li><strong>Distance:</strong> Spans 5 to 50 kilometers</li>
+                                            <li><strong>Ownership:</strong> Often owned by multiple organizations or telecommunications providers</li>
+                                            <li><strong>Speed:</strong> Medium to high data rates (10 Mbps to 1 Gbps)</li>
+                                            <li><strong>Transmission Media:</strong> Fiber optic cables, microwave, wireless</li>
+                                            <li><strong>Devices:</strong> Routers, switches, gateways</li>
+                                            <li><strong>Examples:</strong> City networks, cable TV networks, university campus networks</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <h5>Wide Area Network (WAN)</h5>
+                                <ul>
+                                    <li><strong>Geographical Scope:</strong> Large geographical area, spanning cities, countries, or continents</li>
+                                    <li><strong>Distance:</strong> Spans hundreds to thousands of kilometers</li>
+                                    <li><strong>Ownership:</strong> Typically owned by multiple organizations or service providers</li>
+                                    <li><strong>Speed:</strong> Generally slower than LANs (from 1.5 Mbps to 100+ Mbps)</li>
+                                    <li><strong>Transmission Media:</strong> Fiber optic cables, satellite links, microwave links</li>
+                                    <li><strong>Devices:</strong> Routers, multiplexers, switches, communication servers</li>
+                                    <li><strong>Examples:</strong> The Internet, corporate networks spanning multiple locations, telecommunications networks</li>
+                                </ul>
+                                
+                                <h5>Key Differences:</h5>
+                                <ul>
+                                    <li><strong>Scale and Coverage:</strong> LAN (smallest) → MAN → WAN (largest)</li>
+                                    <li><strong>Speed:</strong> LAN (fastest) → MAN → WAN (slowest)</li>
+                                    <li><strong>Cost:</strong> LAN (least expensive) → MAN → WAN (most expensive)</li>
+                                    <li><strong>Complexity:</strong> LAN (simplest) → MAN → WAN (most complex)</li>
+                                    <li><strong>Latency:</strong> LAN (lowest) → MAN → WAN (highest)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container network-types-animation">
+                                <svg viewBox="0 0 300 200" class="network-types-svg">
+                                    <!-- LAN Visualization -->
+                                    <rect x="20" y="20" width="80" height="50" rx="5" class="lan-boundary"></rect>
+                                    <text x="60" y="15" class="network-type-label" text-anchor="middle">LAN</text>
+                                    <circle cx="40" cy="35" r="5" class="device-dot"></circle>
+                                    <circle cx="60" cy="35" r="5" class="device-dot"></circle>
+                                    <circle cx="80" cy="35" r="5" class="device-dot"></circle>
+                                    <circle cx="60" cy="55" r="5" class="device-dot"></circle>
+                                    
+                                    <!-- MAN Visualization -->
+                                    <rect x="110" y="20" width="80" height="160" rx="5" class="man-boundary"></rect>
+                                    <text x="150" y="15" class="network-type-label" text-anchor="middle">MAN</text>
+                                    <!-- Buildings in MAN -->
+                                    <rect x="125" y="35" width="15" height="25" class="building"></rect>
+                                    <rect x="160" y="35" width="15" height="25" class="building"></rect>
+                                    <rect x="125" y="80" width="15" height="25" class="building"></rect>
+                                    <rect x="160" y="80" width="15" height="25" class="building"></rect>
+                                    <rect x="125" y="125" width="15" height="25" class="building"></rect>
+                                    <rect x="160" y="125" width="15" height="25" class="building"></rect>
+                                    
+                                    <!-- WAN Visualization -->
+                                    <rect x="200" y="20" width="80" height="160" rx="5" class="wan-boundary"></rect>
+                                    <text x="240" y="15" class="network-type-label" text-anchor="middle">WAN</text>
+                                    <!-- Globe representation for WAN -->
+                                    <circle cx="240" cy="100" r="30" class="globe" fill="none" stroke="var(--accent-color)" stroke-width="2"></circle>
+                                    <ellipse cx="240" cy="100" rx="30" ry="10" fill="none" stroke="var(--accent-color)" stroke-width="1"></ellipse>
+                                    <line x1="210" y1="100" x2="270" y2="100" stroke="var(--accent-color)" stroke-width="1"></line>
+                                    <line x1="240" y1="70" x2="240" y2="130" stroke="var(--accent-color)" stroke-width="1"></line>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Data Link Layer Category -->
+                <div class="category-header">Data Link Layer</div>
+                
+                <!-- Question 1: Multiple Access Protocols -->
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Multiple Access Protocols</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <p class="question"><strong>Question:</strong> Match the following access protocols with their characteristics:<br>
+                            1-ALOHA 2-CSMA/CD 3-CSMA/CA<br>
+                            (a) No sensing before transmission<br>
+                            (b) Detects and retransmits after a collision<br>
+                            (c) Avoids collisions using acknowledgments</p>
+                            <div class="solution">
+                                <h4>Solution:</h4>
+                                <p>The correct matching is:</p>
+                                <ul>
+                                    <li><strong>1-ALOHA matches with (a) No sensing before transmission</strong> - In ALOHA protocol, stations transmit frames whenever they have data to send without checking if the channel is busy or idle.</li>
+                                    <li><strong>2-CSMA/CD matches with (b) Detects and retransmits after a collision</strong> - In CSMA/CD (Carrier Sense Multiple Access with Collision Detection), stations sense the medium before transmitting, but if a collision occurs, they detect it and retransmit after a random backoff time.</li>
+                                    <li><strong>3-CSMA/CA matches with (c) Avoids collisions using acknowledgments</strong> - In CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance), stations try to avoid collisions by using mechanisms like RTS/CTS (Request to Send/Clear to Send) and acknowledgments.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container mac-protocols-animation">
+                                <svg viewBox="0 0 300 200" class="mac-protocols-svg">
+                                    <!-- ALOHA Visualization -->
+                                    <g class="aloha-group" transform="translate(0,0)">
+                                        <text x="50" y="15" class="protocol-label">ALOHA</text>
+                                        <rect x="10" y="25" width="80" height="40" rx="5" class="station-box"></rect>
+                                        <text x="50" y="45" class="station-label" text-anchor="middle">Station</text>
+                                        <line x1="50" y1="65" x2="50" y2="85" stroke="var(--accent-color)" stroke-width="2" class="transmission-line"></line>
+                                        <rect x="10" y="85" width="80" height="10" rx="2" class="channel"></rect>
+                                        <rect x="40" y="70" width="20" height="10" rx="2" class="data-packet"></rect>
+                                    </g>
+                                    
+                                    <!-- CSMA/CD Visualization -->
+                                    <g class="csmacd-group" transform="translate(110,0)">
+                                        <text x="50" y="15" class="protocol-label">CSMA/CD</text>
+                                        <rect x="10" y="25" width="80" height="40" rx="5" class="station-box"></rect>
+                                        <text x="50" y="45" class="station-label" text-anchor="middle">Station</text>
+                                        <line x1="50" y1="65" x2="50" y2="85" stroke="var(--accent-color)" stroke-width="2" class="transmission-line"></line>
+                                        <rect x="10" y="85" width="80" height="10" rx="2" class="channel"></rect>
+                                        <rect x="40" y="70" width="20" height="10" rx="2" class="data-packet collision-packet"></rect>
+                                        <path d="M 50,75 L 60,70 L 60,80 Z" class="collision-indicator"></path>
+                                    </g>
+                                    
+                                    <!-- CSMA/CA Visualization -->
+                                    <g class="csmaca-group" transform="translate(220,0)">
+                                        <text x="50" y="15" class="protocol-label">CSMA/CA</text>
+                                        <rect x="10" y="25" width="80" height="40" rx="5" class="station-box"></rect>
+                                        <text x="50" y="45" class="station-label" text-anchor="middle">Station</text>
+                                        <line x1="50" y1="65" x2="50" y2="85" stroke="var(--accent-color)" stroke-width="2" class="transmission-line"></line>
+                                        <rect x="10" y="85" width="80" height="10" rx="2" class="channel"></rect>
+                                        <rect x="40" y="70" width="20" height="10" rx="2" class="data-packet"></rect>
+                                        <rect x="40" y="55" width="20" height="10" rx="2" class="ack-packet"></rect>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 2: ALOHA Efficiency -->
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Pure ALOHA vs Slotted ALOHA Efficiency</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <p class="question"><strong>Question:</strong> Compare Pure ALOHA and Slotted ALOHA in terms of efficiency.</p>
+                            <div class="solution">
+                                <h4>Solution:</h4>
+                                
+                                <div class="protocol-comparison">
+                                    <div class="protocol-box">
+                                        <h5>Pure ALOHA</h5>
+                                        <ul>
+                                            <li><strong>Transmission:</strong> Stations can transmit at any time</li>
+                                            <li><strong>Collision Window:</strong> 2 frame transmission times (vulnerable period)</li>
+                                            <li><strong>Maximum Throughput:</strong> 18.4% (1/2e ≈ 0.184)</li>
+                                            <li><strong>Advantages:</strong> Simple implementation, no synchronization required</li>
+                                            <li><strong>Disadvantages:</strong> Lower efficiency, higher collision probability</li>
+                                        </ul>
+                                    </div>
+                                    <div class="protocol-box">
+                                        <h5>Slotted ALOHA</h5>
+                                        <ul>
+                                            <li><strong>Transmission:</strong> Stations can only transmit at the beginning of time slots</li>
+                                            <li><strong>Collision Window:</strong> 1 frame transmission time (vulnerable period)</li>
+                                            <li><strong>Maximum Throughput:</strong> 36.8% (1/e ≈ 0.368)</li>
+                                            <li><strong>Advantages:</strong> Double the efficiency of Pure ALOHA</li>
+                                            <li><strong>Disadvantages:</strong> Requires synchronization between stations</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <p>The key difference is that Slotted ALOHA divides time into discrete slots and requires stations to transmit only at the beginning of these slots, which reduces the collision probability by half compared to Pure ALOHA. This results in Slotted ALOHA having twice the maximum throughput efficiency of Pure ALOHA.</p>
+                            </div>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container aloha-efficiency-animation">
+                                <svg viewBox="0 0 300 200" class="aloha-efficiency-svg">
+                                    <!-- Pure ALOHA Visualization -->
+                                    <text x="75" y="15" class="protocol-label">Pure ALOHA</text>
+                                    <rect x="20" y="25" width="110" height="60" rx="5" class="timeline-box"></rect>
+                                    
+                                    <!-- Timeline for Pure ALOHA -->
+                                    <line x1="30" y1="55" x2="120" y2="55" stroke="var(--text-color)" stroke-width="1"></line>
+                                    <rect x="40" y="45" width="30" height="20" rx="2" class="frame frame1"></rect>
+                                    <rect x="80" y="45" width="30" height="20" rx="2" class="frame frame2"></rect>
+                                    <path d="M 55,75 L 95,75 L 75,85 Z" class="collision-indicator"></path>
+                                    
+                                    <!-- Slotted ALOHA Visualization -->
+                                    <text x="225" y="15" class="protocol-label">Slotted ALOHA</text>
+                                    <rect x="170" y="25" width="110" height="60" rx="5" class="timeline-box"></rect>
+                                    
+                                    <!-- Timeline for Slotted ALOHA -->
+                                    <line x1="180" y1="55" x2="270" y2="55" stroke="var(--text-color)" stroke-width="1"></line>
+                                    <!-- Time slots -->
+                                    <line x1="200" y1="45" x2="200" y2="65" stroke="var(--text-secondary)" stroke-width="1" stroke-dasharray="2,2"></line>
+                                    <line x1="220" y1="45" x2="220" y2="65" stroke="var(--text-secondary)" stroke-width="1" stroke-dasharray="2,2"></line>
+                                    <line x1="240" y1="45" x2="240" y2="65" stroke="var(--text-secondary)" stroke-width="1" stroke-dasharray="2,2"></line>
+                                    <rect x="180" y="45" width="20" height="20" rx="2" class="frame frame1"></rect>
+                                    <rect x="220" y="45" width="20" height="20" rx="2" class="frame frame2"></rect>
+                                    
+                                    <!-- Efficiency Comparison -->
+                                    <rect x="20" y="110" width="110" height="30" rx="5" class="efficiency-box"></rect>
+                                    <text x="75" y="130" class="efficiency-text" text-anchor="middle">Efficiency: 18.4%</text>
+                                    
+                                    <rect x="170" y="110" width="110" height="30" rx="5" class="efficiency-box"></rect>
+                                    <text x="225" y="130" class="efficiency-text" text-anchor="middle">Efficiency: 36.8%</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 3: Channel Allocation Problem -->
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Channel Allocation Problem</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <p class="question"><strong>Question:</strong> Summarize the purpose of the channel allocation problem.</p>
+                            <div class="solution">
+                                <h4>Solution:</h4>
+                                <p>The channel allocation problem addresses how to efficiently share a common communication channel among multiple competing users or devices. Its purpose is to:</p>
+                                
+                                <ul>
+                                    <li><strong>Resource Management:</strong> Efficiently allocate the limited bandwidth of a shared communication medium among multiple users.</li>
+                                    <li><strong>Collision Prevention:</strong> Minimize or eliminate data collisions when multiple stations attempt to transmit simultaneously.</li>
+                                    <li><strong>Fairness:</strong> Ensure all stations get fair access to the channel without any station being starved of transmission opportunities.</li>
+                                    <li><strong>Throughput Maximization:</strong> Achieve the highest possible effective data transmission rate for the network as a whole.</li>
+                                    <li><strong>Delay Minimization:</strong> Reduce the waiting time for stations to access the channel and complete their transmissions.</li>
+                                </ul>
+                                
+                                <p>Channel allocation methods fall into three main categories:</p>
+                                
+                                <ol>
+                                    <li><strong>Static Channel Allocation:</strong> The channel is divided into fixed portions allocated to each user (e.g., FDMA, TDMA). Simple but inefficient when users have varying traffic needs.</li>
+                                    <li><strong>Dynamic Channel Allocation:</strong> Channel capacity is allocated on-demand based on current needs. More efficient but requires coordination.</li>
+                                    <li><strong>Random Access Protocols:</strong> Users compete for channel access using protocols like ALOHA, CSMA/CD, and CSMA/CA. Simple but can lead to collisions under heavy load.</li>
+                                </ol>
+                                
+                                <p>The challenge is finding the right balance between simplicity, efficiency, fairness, and performance for a given network scenario.</p>
+                            </div>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container channel-allocation-animation">
+                                <svg viewBox="0 0 300 200" class="channel-allocation-svg">
+                                    <!-- Channel Visualization -->
+                                    <rect x="50" y="100" width="200" height="20" rx="2" class="channel"></rect>
+                                    
+                                    <!-- Static Allocation -->
+                                    <text x="75" y="15" class="allocation-label">Static Allocation</text>
+                                    <rect x="50" y="25" width="50" height="20" rx="2" class="static-slot"></rect>
+                                    <rect x="100" y="25" width="50" height="20" rx="2" class="static-slot"></rect>
+                                    <rect x="150" y="25" width="50" height="20" rx="2" class="static-slot"></rect>
+                                    <rect x="200" y="25" width="50" height="20" rx="2" class="static-slot"></rect>
+                                    
+                                    <!-- Dynamic Allocation -->
+                                    <text x="75" y="65" class="allocation-label">Dynamic Allocation</text>
+                                    <rect x="50" y="75" width="30" height="20" rx="2" class="dynamic-slot"></rect>
+                                    <rect x="80" y="75" width="90" height="20" rx="2" class="dynamic-slot"></rect>
+                                    <rect x="170" y="75" width="40" height="20" rx="2" class="dynamic-slot"></rect>
+                                    <rect x="210" y="75" width="40" height="20" rx="2" class="dynamic-slot"></rect>
+                                    
+                                    <!-- Random Access -->
+                                    <text x="75" y="140" class="allocation-label">Random Access</text>
+                                    <rect x="70" y="150" width="30" height="20" rx="2" class="random-slot slot1"></rect>
+                                    <rect x="120" y="150" width="30" height="20" rx="2" class="random-slot slot2"></rect>
+                                    <rect x="140" y="150" width="30" height="20" rx="2" class="random-slot slot3"></rect>
+                                    <rect x="200" y="150" width="30" height="20" rx="2" class="random-slot slot4"></rect>
+                                    <path d="M 140,180 L 160,180 L 150,190 Z" class="collision-indicator"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- IP Addressing Category -->
+                <div class="category-header">IP Addressing & Subnetting</div>
+                
+                <!-- Question 1: IP Address Representation -->
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Network ID and Host ID Representation</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <p class="question"><strong>Question:</strong> Find how many bits are used to represent network ID and host ID for the following IP addresses: 192.0.1.20/24 and 10.0.0.20/27</p>
+                            <div class="solution">
+                                <h4>Solution:</h4>
+                                <p>For an IP address with CIDR notation, the number after the slash (/) indicates how many bits are used for the network ID. The remaining bits (out of 32 total bits in IPv4) are used for the host ID.</p>
+                                
+                                <h5>For IP address: 192.0.1.20/24</h5>
+                                <ul>
+                                    <li>Network ID: 24 bits</li>
+                                    <li>Host ID: 32 - 24 = 8 bits</li>
+                                    <li>Network portion: 192.0.1.0</li>
+                                    <li>Host portion: 0.0.0.20</li>
+                                </ul>
+                                
+                                <h5>For IP address: 10.0.0.20/27</h5>
+                                <ul>
+                                    <li>Network ID: 27 bits</li>
+                                    <li>Host ID: 32 - 27 = 5 bits</li>
+                                    <li>Network portion: 10.0.0.0 (first 27 bits)</li>
+                                    <li>Host portion: Last 5 bits of the last octet</li>
+                                    <li>Subnet mask: 255.255.255.224 (11111111.11111111.11111111.11100000)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container ip-animation">
+                                <svg viewBox="0 0 300 200" class="ip-svg">
+                                    <!-- First IP Address Visualization -->
+                                    <rect x="30" y="40" width="240" height="30" rx="2" class="ip-box"></rect>
+                                    <line x1="30" y1="40" x2="30" y2="70" stroke="var(--text-color)" stroke-width="1"></line>
+                                    <line x1="270" y1="40" x2="270" y2="70" stroke="var(--text-color)" stroke-width="1"></line>
+                                    
+                                    <!-- Network ID part -->
+                                    <rect x="30" y="40" width="180" height="30" rx="0" class="network-part"></rect>
+                                    <text x="120" y="60" class="ip-text">Network ID (24 bits)</text>
+                                    
+                                    <!-- Host ID part -->
+                                    <rect x="210" y="40" width="60" height="30" rx="0" class="host-part"></rect>
+                                    <text x="240" y="60" class="ip-text">Host ID (8 bits)</text>
+                                    
+                                    <text x="150" y="30" class="ip-label">192.0.1.20/24</text>
+                                    
+                                    <!-- Second IP Address Visualization -->
+                                    <rect x="30" y="100" width="240" height="30" rx="2" class="ip-box"></rect>
+                                    <line x1="30" y1="100" x2="30" y2="130" stroke="var(--text-color)" stroke-width="1"></line>
+                                    <line x1="270" y1="100" x2="270" y2="130" stroke="var(--text-color)" stroke-width="1"></line>
+                                    
+                                    <!-- Network ID part -->
+                                    <rect x="30" y="100" width="202.5" height="30" rx="0" class="network-part"></rect>
+                                    <text x="131.25" y="120" class="ip-text">Network ID (27 bits)</text>
+                                    
+                                    <!-- Host ID part -->
+                                    <rect x="232.5" y="100" width="37.5" height="30" rx="0" class="host-part"></rect>
+                                    <text x="251.25" y="120" class="ip-text">Host ID (5)</text>
+                                    
+                                    <text x="150" y="90" class="ip-label">10.0.0.20/27</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 2: Classfull vs Classless Addressing -->
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Classfull vs Classless IPv4 Addressing</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <p class="question"><strong>Question:</strong> Distinguish between Classfull and Classless IPv4 addressing</p>
+                            <div class="solution">
+                                <h4>Solution:</h4>
+                                
+                                <div class="protocol-comparison">
+                                    <div class="protocol-box">
+                                        <h5>Classfull Addressing</h5>
+                                        <ul>
+                                            <li>Divides IP address space into five fixed classes (A, B, C, D, E)</li>
+                                            <li>Class A: First bit is 0 (0.0.0.0 to 127.255.255.255), /8 prefix</li>
+                                            <li>Class B: First two bits are 10 (128.0.0.0 to 191.255.255.255), /16 prefix</li>
+                                            <li>Class C: First three bits are 110 (192.0.0.0 to 223.255.255.255), /24 prefix</li>
+                                            <li>Class D: First four bits are 1110 (224.0.0.0 to 239.255.255.255), multicast</li>
+                                            <li>Class E: First four bits are 1111 (240.0.0.0 to 255.255.255.255), reserved</li>
+                                            <li>Fixed subnet mask for each class</li>
+                                            <li>Inefficient use of IP address space</li>
+                                            <li>No support for subnetting across octet boundaries</li>
+                                        </ul>
+                                    </div>
+                                    <div class="protocol-box">
+                                        <h5>Classless Addressing (CIDR)</h5>
+                                        <ul>
+                                            <li>Uses variable-length subnet masks (VLSM)</li>
+                                            <li>Represented with CIDR notation (e.g., /24, /27)</li>
+                                            <li>Allows for more efficient allocation of IP addresses</li>
+                                            <li>Supports subnetting with any number of bits</li>
+                                            <li>Reduces the size of routing tables through route aggregation</li>
+                                            <li>Helps mitigate IPv4 address exhaustion</li>
+                                            <li>Provides more flexibility in network design</li>
+                                            <li>Enables supernetting (combining multiple networks)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container ip-classes-animation">
+                                <svg viewBox="0 0 300 200" class="ip-classes-svg">
+                                    <!-- Class A -->
+                                    <rect x="30" y="30" width="240" height="20" rx="2" class="ip-box"></rect>
+                                    <rect x="30" y="30" width="30" height="20" rx="0" fill="var(--accent-color)"></rect>
+                                    <text x="45" y="44" class="ip-text" fill="white">A</text>
+                                    <text x="150" y="44" class="ip-text">0.0.0.0 - 127.255.255.255</text>
+                                    
+                                    <!-- Class B -->
+                                    <rect x="30" y="60" width="240" height="20" rx="2" class="ip-box"></rect>
+                                    <rect x="30" y="60" width="30" height="20" rx="0" fill="var(--accent-color)"></rect>
+                                    <text x="45" y="74" class="ip-text" fill="white">B</text>
+                                    <text x="150" y="74" class="ip-text">128.0.0.0 - 191.255.255.255</text>
+                                    
+                                    <!-- Class C -->
+                                    <rect x="30" y="90" width="240" height="20" rx="2" class="ip-box"></rect>
+                                    <rect x="30" y="90" width="30" height="20" rx="0" fill="var(--accent-color)"></rect>
+                                    <text x="45" y="104" class="ip-text" fill="white">C</text>
+                                    <text x="150" y="104" class="ip-text">192.0.0.0 - 223.255.255.255</text>
+                                    
+                                    <!-- CIDR -->
+                                    <rect x="30" y="130" width="240" height="40" rx="2" class="ip-box"></rect>
+                                    <text x="150" y="150" class="ip-text">CIDR: Variable Length Subnet Masks</text>
+                                    <text x="150" y="165" class="ip-text">/8, /16, /24, /27, etc.</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 3: Same Network Check -->
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>IP Address Network Membership</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <p class="question"><strong>Question:</strong> State whether the following IP address pairs belong to the same network or different networks:</p>
+                            <ol>
+                                <li>IP address 1: 10.10.10.1 and IP address 2: 10.10.20.16 Subnet Mask: 255.0.0.0</li>
+                                <li>IP address 1: 10.10.10.1 and IP address 2: 10.10.20.16 Subnet Mask: 255.255.255.0</li>
+                                <li>IP address 1: 10.10.36.1 and IP address 2: 10.10.12.1 Subnet Mask: 255.255.0.0</li>
+                                <li>IP address 1: 172.16.200.1 and IP address 2: 172.16.165.2 Subnet Mask: 255.255.0.0</li>
+                                <li>IP address 1: 172.16.200.1 and IP address 2: 172.16.200.2 Subnet Mask: 255.255.255.0</li>
+                            </ol>
+                            
+                            <div class="solution">
+                                <h4>Solution:</h4>
+                                <p>To determine if two IP addresses belong to the same network, we need to perform a bitwise AND operation between each IP address and the subnet mask, then compare the results.</p>
+                                
+                                <table class="solution-table">
+                                    <tr>
+                                        <th>Case</th>
+                                        <th>IP Address 1</th>
+                                        <th>IP Address 2</th>
+                                        <th>Subnet Mask</th>
+                                        <th>Network ID 1</th>
+                                        <th>Network ID 2</th>
+                                        <th>Result</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>10.10.10.1</td>
+                                        <td>10.10.20.16</td>
+                                        <td>255.0.0.0</td>
+                                        <td>10.0.0.0</td>
+                                        <td>10.0.0.0</td>
+                                        <td><strong>Same Network</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>10.10.10.1</td>
+                                        <td>10.10.20.16</td>
+                                        <td>255.255.255.0</td>
+                                        <td>10.10.10.0</td>
+                                        <td>10.10.20.0</td>
+                                        <td><strong>Different Networks</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>10.10.36.1</td>
+                                        <td>10.10.12.1</td>
+                                        <td>255.255.0.0</td>
+                                        <td>10.10.0.0</td>
+                                        <td>10.10.0.0</td>
+                                        <td><strong>Same Network</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>172.16.200.1</td>
+                                        <td>172.16.165.2</td>
+                                        <td>255.255.0.0</td>
+                                        <td>172.16.0.0</td>
+                                        <td>172.16.0.0</td>
+                                        <td><strong>Same Network</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>172.16.200.1</td>
+                                        <td>172.16.200.2</td>
+                                        <td>255.255.255.0</td>
+                                        <td>172.16.200.0</td>
+                                        <td>172.16.200.0</td>
+                                        <td><strong>Same Network</strong></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container network-check-animation">
+                                <svg viewBox="0 0 300 200" class="network-check-svg">
+                                    <!-- Network visualization -->
+                                    <rect x="30" y="30" width="240" height="140" rx="5" class="network-boundary"></rect>
+                                    <text x="150" y="20" class="network-label">Network Membership Check</text>
+                                    
+                                    <!-- IP Address 1 -->
+                                    <circle cx="90" cy="70" r="20" class="device"></circle>
+                                    <text x="90" y="100" class="device-label">IP 1</text>
+                                    
+                                    <!-- IP Address 2 -->
+                                    <circle cx="210" cy="70" r="20" class="device"></circle>
+                                    <text x="210" y="100" class="device-label">IP 2</text>
+                                    
+                                    <!-- Subnet Mask -->
+                                    <rect x="90" y="130" width="120" height="25" rx="3" class="subnet-box"></rect>
+                                    <text x="150" y="147" class="subnet-text">Subnet Mask</text>
+                                    
+                                    <!-- Connection line -->
+                                    <line x1="90" y1="70" x2="210" y2="70" stroke="var(--accent-color)" stroke-width="2" stroke-dasharray="5,5"></line>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 4: IP Class Identification -->
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>IP Address Class Identification</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <p class="question"><strong>Question:</strong> Identify which class the IP address 172.16.45.20 belongs to and explain why</p>
+                            <div class="solution">
+                                <h4>Solution:</h4>
+                                <p>The IP address 172.16.45.20 belongs to <strong>Class B</strong>.</p>
+                                <p><strong>Explanation:</strong></p>
+                                <ul>
+                                    <li>Class A addresses range from 1.0.0.0 to 127.255.255.255 (first bit is 0)</li>
+                                    <li>Class B addresses range from 128.0.0.0 to 191.255.255.255 (first two bits are 10)</li>
+                                    <li>Class C addresses range from 192.0.0.0 to 223.255.255.255 (first three bits are 110)</li>
+                                    <li>Class D addresses range from 224.0.0.0 to 239.255.255.255 (first four bits are 1110)</li>
+                                    <li>Class E addresses range from 240.0.0.0 to 255.255.255.255 (first four bits are 1111)</li>
+                                </ul>
+                                <p>Since 172.16.45.20 starts with 172, which falls between 128 and 191, it belongs to Class B.</p>
+                                <p>In binary, the first octet (172) is 10101100, which starts with the bits '10', confirming it's a Class B address.</p>
+                            </div>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container ip-class-animation">
+                                <svg viewBox="0 0 300 200" class="ip-class-svg">
+                                    <!-- IP Classes visualization -->
+                                    <rect x="30" y="30" width="240" height="140" rx="5" class="ip-classes-box"></rect>
+                                    
+                                    <!-- Class ranges -->
+                                    <rect x="40" y="50" width="220" height="20" rx="3" class="class-a"></rect>
+                                    <text x="150" y="64" class="class-text">Class A: 1-127</text>
+                                    
+                                    <rect x="40" y="80" width="220" height="20" rx="3" class="class-b" fill="var(--accent-color)"></rect>
+                                    <text x="150" y="94" class="class-text" fill="white">Class B: 128-191</text>
+                                    
+                                    <rect x="40" y="110" width="220" height="20" rx="3" class="class-c"></rect>
+                                    <text x="150" y="124" class="class-text">Class C: 192-223</text>
+                                    
+                                    <rect x="40" y="140" width="220" height="20" rx="3" class="class-d-e"></rect>
+                                    <text x="150" y="154" class="class-text">Class D/E: 224-255</text>
+                                    
+                                    <!-- Highlight the IP -->
+                                    <text x="150" y="180" class="ip-highlight">172.16.45.20 → Class B</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Routing Algorithms Category -->
+                <div class="category-header">Routing Algorithms</div>
+                
+                <!-- Question 5: Dijkstra's Algorithm -->
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Dijkstra's Algorithm for Shortest Path</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <p class="question"><strong>Question:</strong> A network consists of nodes A, B, C, D, and E with the following link weights:<br>
+                            A to B = 2, A to C = 4<br>
+                            B to C = 1, B to D = 7<br>
+                            C to D = 3, C to E = 1<br>
+                            D to E = 2<br>
+                            Apply Dijkstra's Algorithm to determine the shortest path from node A to node E. Show the step-by-step process, including distance table updates.</p>
+                            
+                            <div class="solution">
+                                <h4>Solution:</h4>
+                                <p>Dijkstra's algorithm finds the shortest path from a source node to all other nodes in a graph with non-negative edge weights.</p>
+                                
+                                <div class="algorithm-step">
+                                    <strong>Step 1:</strong> Initialize distances from source node A to all other nodes.<br>
+                                    - Distance to A = 0 (source node)<br>
+                                    - Distance to B = 2 (direct connection from A)<br>
+                                    - Distance to C = 4 (direct connection from A)<br>
+                                    - Distance to D = ∞ (no direct connection)<br>
+                                    - Distance to E = ∞ (no direct connection)<br>
+                                    <strong>Visited nodes:</strong> A<br>
+                                    <strong>Tentative distances:</strong> [A:0, B:2, C:4, D:∞, E:∞]<br>
+                                    <strong>Current shortest path to E:</strong> Not found yet
+                                </div>
+                                
+                                <div class="algorithm-step">
+                                    <strong>Step 2:</strong> Select node B (smallest tentative distance among unvisited nodes).<br>
+                                    - Update distance to C: min(4, 2+1) = 3<br>
+                                    - Update distance to D: min(∞, 2+7) = 9<br>
+                                    <strong>Visited nodes:</strong> A, B<br>
+                                    <strong>Tentative distances:</strong> [A:0, B:2, C:3, D:9, E:∞]<br>
+                                    <strong>Current shortest path to E:</strong> Not found yet
+                                </div>
+                                
+                                <div class="algorithm-step">
+                                    <strong>Step 3:</strong> Select node C (smallest tentative distance among unvisited nodes).<br>
+                                    - Update distance to D: min(9, 3+3) = 6<br>
+                                    - Update distance to E: min(∞, 3+1) = 4<br>
+                                    <strong>Visited nodes:</strong> A, B, C<br>
+                                    <strong>Tentative distances:</strong> [A:0, B:2, C:3, D:6, E:4]<br>
+                                    <strong>Current shortest path to E:</strong> A → B → C → E (distance: 4)
+                                </div>
+                                
+                                <div class="algorithm-step">
+                                    <strong>Step 4:</strong> Select node E (smallest tentative distance among unvisited nodes).<br>
+                                    - No updates needed as all neighbors are already visited or have shorter paths.<br>
+                                    <strong>Visited nodes:</strong> A, B, C, E<br>
+                                    <strong>Tentative distances:</strong> [A:0, B:2, C:3, D:6, E:4]<br>
+                                    <strong>Current shortest path to E:</strong> A → B → C → E (distance: 4)
+                                </div>
+                                
+                                <div class="algorithm-step">
+                                    <strong>Step 5:</strong> Select node D (last unvisited node).<br>
+                                    - No updates needed as all neighbors are already visited or have shorter paths.<br>
+                                    <strong>Visited nodes:</strong> A, B, C, D, E<br>
+                                    <strong>Final distances:</strong> [A:0, B:2, C:3, D:6, E:4]<br>
+                                    <strong>Final shortest path to E:</strong> A → B → C → E (distance: 4)
+                                </div>
+                                
+                                <p><strong>Conclusion:</strong> The shortest path from A to E is A → B → C → E with a total distance of 4.</p>
+                            </div>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container dijkstra-animation">
+                                <svg viewBox="0 0 300 200" class="dijkstra-svg">
+                                    <!-- Network Graph -->
+                                    <!-- Node A -->
+                                    <circle cx="50" cy="100" r="15" class="node node-a"></circle>
+                                    <text x="50" y="105" class="node-label">A</text>
+                                    
+                                    <!-- Node B -->
+                                    <circle cx="120" cy="50" r="15" class="node node-b"></circle>
+                                    <text x="120" y="55" class="node-label">B</text>
+                                    
+                                    <!-- Node C -->
+                                    <circle cx="120" cy="150" r="15" class="node node-c"></circle>
+                                    <text x="120" y="155" class="node-label">C</text>
+                                    
+                                    <!-- Node D -->
+                                    <circle cx="200" cy="50" r="15" class="node node-d"></circle>
+                                    <text x="200" y="55" class="node-label">D</text>
+                                    
+                                    <!-- Node E -->
+                                    <circle cx="200" cy="150" r="15" class="node node-e"></circle>
+                                    <text x="200" y="155" class="node-label">E</text>
+                                    </div>
+                                    <script>
+                                    $(document).ready(function() {
+                                        $('.topic-header').on('click', function() {
+                                            var $accordion = $(this).closest('.topic-accordion');
+                                            var $content = $accordion.find('.topic-content');
+                                            var $icon = $(this).find('.toggle-icon');
+                                            if ($accordion.hasClass('active')) {
+                                                $content.css({'max-height': '0', 'opacity': '0'});
+                                                $accordion.removeClass('active');
+                                                $icon.text('+');
+                                            } else {
+                                                $('.topic-accordion.active .topic-content').css({'max-height': '0', 'opacity': '0'});
+                                                $('.topic-accordion.active .toggle-icon').text('+');
+                                                $('.topic-accordion.active').removeClass('active');
+                                                $accordion.addClass('active');
+                                                $content.css({'max-height': $content.prop('scrollHeight') + 'px', 'opacity': '1'});
+                                                $icon.text('–');
+                                            }
+                                        });
+                                        $('.topic-accordion.active .topic-content').each(function() {
+                                            $(this).css({'max-height': $(this).prop('scrollHeight') + 'px', 'opacity': '1'});
+                                        });
+                                    });
+                                    </script>
+                                    </div>
+                                    </body>

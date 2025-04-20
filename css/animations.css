@@ -1,0 +1,914 @@
+/* Animations for Computer Networks Educational Portal */
+
+/* General Animation Keyframes */
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes wave {
+    0% { transform: translateX(0) translateY(0); }
+    25% { transform: translateX(5px) translateY(-5px); }
+    50% { transform: translateX(0) translateY(0); }
+    75% { transform: translateX(-5px) translateY(5px); }
+    100% { transform: translateX(0) translateY(0); }
+}
+
+/* Module Icons Animation */
+.module1-icon::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(58, 134, 255, 0.2);
+    border-radius: 50%;
+    top: 15px;
+    left: 15px;
+    animation: pulse 3s infinite;
+}
+
+.question-bank-icon::before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(16, 185, 129, 0.2);
+    border-radius: 50%;
+    top: 18px;
+    left: 18px;
+    animation: pulse 2.5s infinite;
+}
+
+.module2-icon::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background-color: rgba(58, 134, 255, 0.3);
+    top: 30px;
+    left: 10px;
+    animation: wave 4s infinite;
+}
+
+.module3-icon::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(58, 134, 255, 0.3);
+    border-radius: 5px;
+    top: 20px;
+    left: 20px;
+    animation: rotate 8s linear infinite;
+}
+
+.module4-icon::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(58, 134, 255, 0.3);
+    border-radius: 50%;
+    top: 25px;
+    left: 25px;
+    box-shadow: -15px -15px 0 rgba(58, 134, 255, 0.2),
+                15px -15px 0 rgba(58, 134, 255, 0.2),
+                -15px 15px 0 rgba(58, 134, 255, 0.2),
+                15px 15px 0 rgba(58, 134, 255, 0.2);
+    animation: pulse 3s infinite;
+}
+
+.module5-icon::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background-color: rgba(58, 134, 255, 0.3);
+    top: 28px;
+    left: 15px;
+    animation: wave 3s infinite;
+}
+
+.module6-icon::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(58, 134, 255, 0.3);
+    border-radius: 50%;
+    top: 15px;
+    left: 15px;
+    animation: pulse 4s infinite;
+}
+
+/* Multiple Access Protocols Animations */
+.mac-protocols-svg .station-box {
+    fill: var(--surface-color);
+    stroke: var(--accent-color);
+    stroke-width: 1;
+}
+
+.mac-protocols-svg .station-label {
+    fill: var(--text-color);
+    font-size: 10px;
+    text-anchor: middle;
+}
+
+.mac-protocols-svg .protocol-label {
+    fill: var(--accent-color);
+    font-size: 12px;
+    font-weight: bold;
+    text-anchor: middle;
+}
+
+.mac-protocols-svg .channel {
+    fill: var(--primary-color);
+    opacity: 0.3;
+}
+
+.mac-protocols-svg .transmission-line {
+    stroke-dasharray: 2,2;
+    animation: dash 10s linear infinite;
+}
+
+.mac-protocols-svg .data-packet {
+    fill: var(--success-color);
+    animation: movePacket 3s infinite;
+}
+
+.mac-protocols-svg .ack-packet {
+    fill: var(--warning-color);
+    animation: movePacketUp 3s infinite;
+}
+
+.mac-protocols-svg .collision-packet {
+    fill: var(--error-color);
+    animation: collisionPacket 3s infinite;
+}
+
+.mac-protocols-svg .collision-indicator {
+    fill: var(--error-color);
+    animation: blink 1s infinite;
+}
+
+@keyframes movePacket {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(15px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes movePacketUp {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes collisionPacket {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(5px); }
+    50% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+
+/* ALOHA Efficiency Animation */
+.aloha-efficiency-svg .timeline-box {
+    fill: var(--surface-color);
+    stroke: var(--accent-color);
+    stroke-width: 1;
+}
+
+.aloha-efficiency-svg .protocol-label {
+    fill: var(--accent-color);
+    font-size: 12px;
+    font-weight: bold;
+    text-anchor: middle;
+}
+
+.aloha-efficiency-svg .frame {
+    fill: var(--primary-color);
+}
+
+.aloha-efficiency-svg .frame1 {
+    animation: moveFrame1 5s infinite;
+}
+
+.aloha-efficiency-svg .frame2 {
+    animation: moveFrame2 5s infinite;
+}
+
+.aloha-efficiency-svg .collision-indicator {
+    fill: var(--error-color);
+    animation: blink 1s infinite;
+}
+
+.aloha-efficiency-svg .efficiency-box {
+    fill: var(--surface-color);
+    stroke: var(--accent-color);
+    stroke-width: 1;
+}
+
+.aloha-efficiency-svg .efficiency-text {
+    fill: var(--text-color);
+    font-size: 10px;
+}
+
+@keyframes moveFrame1 {
+    0% { transform: translateX(-10px); opacity: 0; }
+    20% { transform: translateX(0); opacity: 1; }
+    40% { transform: translateX(10px); opacity: 1; }
+    60% { transform: translateX(20px); opacity: 0; }
+    100% { transform: translateX(-10px); opacity: 0; }
+}
+
+@keyframes moveFrame2 {
+    0% { transform: translateX(10px); opacity: 0; }
+    20% { transform: translateX(0); opacity: 1; }
+    40% { transform: translateX(-10px); opacity: 1; }
+    60% { transform: translateX(-20px); opacity: 0; }
+    100% { transform: translateX(10px); opacity: 0; }
+}
+
+/* Channel Allocation Animation */
+.channel-allocation-svg .channel {
+    fill: var(--primary-color);
+    opacity: 0.3;
+}
+
+.channel-allocation-svg .allocation-label {
+    fill: var(--accent-color);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.channel-allocation-svg .static-slot {
+    fill: var(--secondary-color);
+    opacity: 0.7;
+}
+
+.channel-allocation-svg .dynamic-slot {
+    fill: var(--success-color);
+    opacity: 0.7;
+}
+
+.channel-allocation-svg .random-slot {
+    fill: var(--warning-color);
+    opacity: 0.7;
+}
+
+.channel-allocation-svg .slot1 {
+    animation: moveSlot1 5s infinite;
+}
+
+.channel-allocation-svg .slot2 {
+    animation: moveSlot2 5s infinite;
+}
+
+.channel-allocation-svg .slot3 {
+    animation: moveSlot3 5s infinite;
+}
+
+.channel-allocation-svg .slot4 {
+    animation: moveSlot4 5s infinite;
+}
+
+.channel-allocation-svg .collision-indicator {
+    fill: var(--error-color);
+    animation: blink 1s infinite;
+}
+
+@keyframes moveSlot1 {
+    0% { transform: translateY(-30px); opacity: 0; }
+    20% { transform: translateY(0); opacity: 1; }
+    80% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(30px); opacity: 0; }
+}
+
+@keyframes moveSlot2 {
+    0% { transform: translateY(-30px); opacity: 0; }
+    30% { transform: translateY(0); opacity: 1; }
+    70% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(30px); opacity: 0; }
+}
+
+@keyframes moveSlot3 {
+    0% { transform: translateY(-30px); opacity: 0; }
+    40% { transform: translateY(0); opacity: 1; }
+    60% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(30px); opacity: 0; }
+}
+
+@keyframes moveSlot4 {
+    0% { transform: translateY(-30px); opacity: 0; }
+    50% { transform: translateY(0); opacity: 1; }
+    90% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(30px); opacity: 0; }
+}
+
+/* Network Introduction Animation */
+.network-intro-svg .device {
+    fill: #3a86ff;
+    stroke: #8338ec;
+    stroke-width: 1;
+}
+
+.network-intro-svg .device-stand {
+    fill: #3a86ff;
+    stroke: #8338ec;
+    stroke-width: 1;
+}
+
+.network-intro-svg .device-base {
+    fill: #8338ec;
+}
+
+.network-intro-svg .server {
+    fill: #ff006e;
+    stroke: #8338ec;
+    stroke-width: 1;
+}
+
+.network-intro-svg .server-light {
+    fill: #10b981;
+    animation: blink 2s infinite;
+}
+
+.network-intro-svg .connection-line {
+    stroke: rgba(58, 134, 255, 0.6);
+    stroke-width: 2;
+    stroke-dasharray: 5;
+    fill: none;
+}
+
+.network-intro-svg .path1 {
+    animation: dash 5s linear infinite;
+}
+
+.network-intro-svg .path2 {
+    animation: dash 5s linear infinite reverse;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 100;
+    }
+}
+
+.network-intro-svg .data-packet {
+    fill: #10b981;
+}
+
+.network-intro-svg .packet1 {
+    animation: movePacket1 5s infinite;
+}
+
+.network-intro-svg .packet2 {
+    animation: movePacket2 5s infinite;
+}
+
+@keyframes movePacket1 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(60px, 75px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes movePacket2 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-60px, 75px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Network Applications Animation */
+.network-apps-svg .server-icon {
+    fill: #ff006e;
+    stroke: #8338ec;
+    stroke-width: 1;
+}
+
+.network-apps-svg .client-device {
+    fill: #3a86ff;
+    stroke: #8338ec;
+    stroke-width: 1;
+}
+
+.network-apps-svg .app-icon {
+    fill: #10b981;
+}
+
+.network-apps-svg .app1 {
+    animation: pulse 3s infinite;
+}
+
+.network-apps-svg .app2 {
+    animation: pulse 3s infinite 0.5s;
+}
+
+.network-apps-svg .app3 {
+    animation: pulse 3s infinite 1s;
+}
+
+.network-apps-svg .app4 {
+    animation: pulse 3s infinite 1.5s;
+}
+
+.network-apps-svg .app-connection {
+    stroke: rgba(58, 134, 255, 0.6);
+    stroke-width: 1;
+    stroke-dasharray: 3;
+}
+
+.network-apps-svg .app-data-packet {
+    fill: #10b981;
+}
+
+.network-apps-svg .packet1 {
+    animation: moveAppPacket1 4s infinite;
+}
+
+.network-apps-svg .packet2 {
+    animation: moveAppPacket2 4s infinite;
+}
+
+.network-apps-svg .packet3 {
+    animation: moveAppPacket3 4s infinite;
+}
+
+.network-apps-svg .packet4 {
+    animation: moveAppPacket4 4s infinite;
+}
+
+@keyframes moveAppPacket1 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(30px, 20px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes moveAppPacket2 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-30px, 20px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes moveAppPacket3 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(30px, -20px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes moveAppPacket4 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-30px, -20px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Network Components Animation */
+.network-components-svg .router {
+    fill: #ff006e;
+    stroke: #8338ec;
+    stroke-width: 1;
+}
+
+.network-components-svg .router-light {
+    stroke: #10b981;
+    stroke-width: 2;
+    animation: blink 2s infinite;
+}
+
+.network-components-svg .switch {
+    fill: #3a86ff;
+    stroke: #8338ec;
+    stroke-width: 1;
+}
+
+.network-components-svg .switch-light {
+    fill: #10b981;
+    animation: blink 1.5s infinite;
+}
+
+.network-components-svg .computer {
+    fill: #8338ec;
+    stroke: #3a86ff;
+    stroke-width: 1;
+}
+
+.network-components-svg .component-connection {
+    stroke: rgba(58, 134, 255, 0.6);
+    stroke-width: 1;
+    stroke-dasharray: 3;
+}
+
+.network-components-svg .component-data-packet {
+    fill: #10b981;
+}
+
+.network-components-svg .packet1 {
+    animation: moveComponentPacket1 4s infinite;
+}
+
+.network-components-svg .packet2 {
+    animation: moveComponentPacket2 4s infinite;
+}
+
+.network-components-svg .packet3 {
+    animation: moveComponentPacket3 4s infinite;
+}
+
+.network-components-svg .packet4 {
+    animation: moveComponentPacket4 4s infinite;
+}
+
+@keyframes moveComponentPacket1 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(30px, 13px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes moveComponentPacket2 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-30px, 13px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes moveComponentPacket3 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(30px, -15px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes moveComponentPacket4 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-30px, -15px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Network Topology Animation */
+.network-topology-svg .topology-central-node {
+    fill: #ff006e;
+    stroke: #8338ec;
+    stroke-width: 1;
+}
+
+.network-topology-svg .topology-node {
+    fill: #3a86ff;
+    stroke: #8338ec;
+    stroke-width: 1;
+}
+
+.network-topology-svg .topology-link {
+    stroke: rgba(58, 134, 255, 0.6);
+    stroke-width: 1;
+    stroke-dasharray: 3;
+}
+
+.network-topology-svg .topology-label {
+    fill: var(--text-secondary);
+    font-size: 10px;
+    text-anchor: middle;
+}
+
+.network-topology-svg .topology-data-packet {
+    fill: #10b981;
+}
+
+.network-topology-svg .packet1 {
+    animation: moveTopologyPacket1 4s infinite;
+}
+
+.network-topology-svg .packet2 {
+    animation: moveTopologyPacket2 4s infinite;
+}
+
+.network-topology-svg .packet3 {
+    animation: moveTopologyPacket3 4s infinite;
+}
+
+.network-topology-svg .packet4 {
+    animation: moveTopologyPacket4 4s infinite;
+}
+
+@keyframes moveTopologyPacket1 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(15px, 15px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes moveTopologyPacket2 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-15px, 15px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes moveTopologyPacket3 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-15px, 15px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes moveTopologyPacket4 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(15px, -15px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Protocol Hierarchy Animation */
+.protocol-hierarchy-svg .protocol-layer {
+    fill: rgba(58, 134, 255, 0.2);
+    stroke: #3a86ff;
+    stroke-width: 1;
+}
+
+.protocol-hierarchy-svg .application-layer {
+    fill: rgba(255, 0, 110, 0.2);
+    stroke: #ff006e;
+}
+
+.protocol-hierarchy-svg .layer-text {
+    fill: var(--text-color);
+    font-size: 8px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+.protocol-hierarchy-svg .communication-medium {
+    stroke: #8338ec;
+    stroke-width: 2;
+}
+
+.protocol-hierarchy-svg .data-unit {
+    fill: #10b981;
+}
+
+.protocol-hierarchy-svg .data {
+    animation: pulse 3s infinite;
+}
+
+.protocol-hierarchy-svg .segment {
+    animation: pulse 3s infinite 0.5s;
+}
+
+.protocol-hierarchy-svg .packet {
+    animation: pulse 3s infinite 1s;
+}
+
+.protocol-hierarchy-svg .frame {
+    animation: pulse 3s infinite 1.5s;
+}
+
+.protocol-hierarchy-svg .bits {
+    animation: pulse 3s infinite 2s;
+}
+
+.protocol-hierarchy-svg .moving-packet {
+    fill: #10b981;
+    animation: moveProtocolPacket 5s infinite;
+}
+
+@keyframes moveProtocolPacket {
+    0% { transform: translateX(-80px); }
+    100% { transform: translateX(80px); }
+}
+
+/* Layer Design Animation */
+.layer-design-svg .system {
+    fill: rgba(58, 134, 255, 0.2);
+    stroke: #3a86ff;
+    stroke-width: 1;
+}
+
+.layer-design-svg .layer-boundary {
+    stroke: rgba(255, 255, 255, 0.3);
+    stroke-width: 1;
+    stroke-dasharray: 3;
+}
+
+.layer-design-svg .design-layer-text {
+    fill: var(--text-color);
+    font-size: 8px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+/* Additional animations for other topics */
+/* Physical Layer Animations */
+.transmission-media-svg .cable {
+    stroke: #3a86ff;
+    stroke-width: 3;
+    fill: none;
+}
+
+.transmission-media-svg .fiber {
+    stroke: #ff006e;
+    stroke-width: 3;
+    fill: none;
+}
+
+.transmission-media-svg .wireless-wave {
+    stroke: #8338ec;
+    stroke-width: 1;
+    fill: none;
+    stroke-dasharray: 3;
+    animation: dash 5s linear infinite;
+}
+
+/* Data Link Layer Animations */
+.error-control-svg .data-frame {
+    fill: rgba(58, 134, 255, 0.2);
+    stroke: #3a86ff;
+    stroke-width: 1;
+}
+
+.error-control-svg .error-bit {
+    fill: #ef4444;
+    animation: blink 1s infinite;
+}
+
+.error-control-svg .check-bit {
+    fill: #10b981;
+}
+
+.sliding-window-svg .window {
+    fill: rgba(58, 134, 255, 0.2);
+    stroke: #3a86ff;
+    stroke-width: 1;
+}
+
+.sliding-window-svg .packet {
+    fill: #10b981;
+    animation: slidePacket 5s infinite;
+}
+
+@keyframes slidePacket {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100px); }
+}
+
+/* Network Layer Animations */
+.ip-addressing-svg .network {
+    fill: rgba(58, 134, 255, 0.2);
+    stroke: #3a86ff;
+    stroke-width: 1;
+    rx: 5;
+}
+
+.ip-addressing-svg .subnet {
+    fill: rgba(255, 0, 110, 0.2);
+    stroke: #ff006e;
+    stroke-width: 1;
+    rx: 3;
+}
+
+.ip-addressing-svg .host {
+    fill: #10b981;
+    rx: 2;
+}
+
+.routing-svg .router {
+    fill: #ff006e;
+    stroke: #8338ec;
+    stroke-width: 1;
+}
+
+.routing-svg .route-path {
+    stroke: #10b981;
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 5;
+    animation: dash 5s linear infinite;
+}
+
+/* Transport Layer Animations */
+.tcp-svg .handshake-arrow {
+    stroke: #3a86ff;
+    stroke-width: 2;
+    fill: none;
+    marker-end: url(#arrowhead);
+}
+
+.tcp-svg .syn-packet {
+    fill: #ff006e;
+    animation: moveHandshake 3s infinite;
+}
+
+.tcp-svg .ack-packet {
+    fill: #10b981;
+    animation: moveHandshake 3s infinite 1.5s;
+}
+
+@keyframes moveHandshake {
+    0% { transform: translateX(0) translateY(0); }
+    50% { transform: translateX(50px) translateY(30px); }
+    100% { transform: translateX(0) translateY(0); }
+}
+
+/* Application Layer Animations */
+.dns-svg .dns-server {
+    fill: #ff006e;
+    stroke: #8338ec;
+    stroke-width: 1;
+}
+
+.dns-svg .dns-query {
+    fill: #3a86ff;
+    animation: moveDnsQuery 4s infinite;
+}
+
+.dns-svg .dns-response {
+    fill: #10b981;
+    animation: moveDnsResponse 4s infinite 2s;
+}
+
+@keyframes moveDnsQuery {
+    0% { transform: translateX(0) translateY(0); }
+    50% { transform: translateX(50px) translateY(-30px); }
+    100% { transform: translateX(0) translateY(0); }
+}
+
+@keyframes moveDnsResponse {
+    0% { transform: translateX(0) translateY(0); }
+    50% { transform: translateX(-50px) translateY(30px); }
+    100% { transform: translateX(0) translateY(0); }
+}
+
+/* Hero Animation */
+.hero .network-animation {
+    position: relative;
+}
+
+.hero .network-animation::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(58, 134, 255, 0.2) 0%, rgba(15, 23, 42, 0) 70%);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 5s infinite;
+}
+
+.hero .network-animation::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 2px dashed rgba(58, 134, 255, 0.3);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 20s linear infinite;
+}
+
+/* Animation Containers */
+.animation-container {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    overflow: visible;
+    background-color: rgba(30, 41, 59, 0.5);
+    border-radius: var(--border-radius-md);
+    margin-top: var(--spacing-md);
+}
+
+/* Question Bank Animations */
+.question1-animation .data-packet {
+    animation: movePacket 4s infinite;
+}
+
+.question2-animation .client-icon {
+    animation: pulse 3s infinite;
+}
+
+@keyframes movePacket {
+    0% { transform: translateX(-80px); }
+    50% { transform: translateX(80px); }
+    100% { transform: translateX(-80px); }
+}

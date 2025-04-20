@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module V: Transport Layer - Computer Networks</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h1>Computer Networks</h1>
+            </div>
+            <div class="theme-toggle">
+                <span class="toggle-icon"></span>
+            </div>
+        </header>
+
+        <section class="module-header">
+            <h2>Module V: Transport Layer</h2>
+            <a href="index.html" class="back-button">← Back to Modules</a>
+        </section>
+
+        <section class="content-section">
+            <div class="module-content">
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Transport Layer Services</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>The transport layer provides end-to-end communication services for applications, bridging the gap between application needs and network capabilities.</li>
+                                <li>Key services include process-to-process delivery, connection management, reliability, flow control, and congestion control.</li>
+                                <li>Transport protocols use port numbers to identify specific applications or services running on network hosts.</li>
+                                <li>The transport layer can provide either connection-oriented (TCP) or connectionless (UDP) communication models.</li>
+                                <li>Quality of Service (QoS) mechanisms at this layer can prioritize certain types of traffic based on application requirements.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container transport-services-animation">
+                                <!-- SVG Animation for Transport Layer Services -->
+                                <svg viewBox="0 0 300 200" class="transport-services-svg">
+                                    <g class="transport-elements">
+                                        <!-- End Systems -->
+                                        <rect x="30" y="50" width="60" height="100" rx="5" class="end-system system1"></rect>
+                                        <rect x="210" y="50" width="60" height="100" rx="5" class="end-system system2"></rect>
+                                        
+                                        <!-- Application Layer -->
+                                        <rect x="30" y="50" width="60" height="20" class="app-layer"></rect>
+                                        <rect x="210" y="50" width="60" height="20" class="app-layer"></rect>
+                                        <text x="60" y="65" class="layer-text">App</text>
+                                        <text x="240" y="65" class="layer-text">App</text>
+                                        
+                                        <!-- Transport Layer -->
+                                        <rect x="30" y="70" width="60" height="20" class="transport-layer"></rect>
+                                        <rect x="210" y="70" width="60" height="20" class="transport-layer"></rect>
+                                        <text x="60" y="85" class="layer-text">Transport</text>
+                                        <text x="240" y="85" class="layer-text">Transport</text>
+                                        
+                                        <!-- Network Layer -->
+                                        <rect x="30" y="90" width="60" height="20" class="network-layer"></rect>
+                                        <rect x="210" y="90" width="60" height="20" class="network-layer"></rect>
+                                        <text x="60" y="105" class="layer-text">Network</text>
+                                        <text x="240" y="105" class="layer-text">Network</text>
+                                        
+                                        <!-- Lower Layers -->
+                                        <rect x="30" y="110" width="60" height="40" class="lower-layers"></rect>
+                                        <rect x="210" y="110" width="60" height="40" class="lower-layers"></rect>
+                                        <text x="60" y="135" class="layer-text">Lower Layers</text>
+                                        <text x="240" y="135" class="layer-text">Lower Layers</text>
+                                        
+                                        <!-- Transport Connection -->
+                                        <path d="M90 80 L210 80" class="transport-connection" stroke-dasharray="5,5"></path>
+                                        <text x="150" y="70" class="connection-label">Logical Connection</text>
+                                        
+                                        <!-- Network Path -->
+                                        <path d="M90 100 C120 120, 180 120, 210 100" class="network-path"></path>
+                                        
+                                        <!-- Ports -->
+                                        <circle cx="90" y="80" r="3" class="port source-port"></circle>
+                                        <circle cx="210" y="80" r="3" class="port dest-port"></circle>
+                                        <text x="80" y="90" class="port-label">Port</text>
+                                        <text x="210" y="90" class="port-label">Port</text>
+                                        
+                                        <!-- Segments -->
+                                        <rect x="120" y="75" width="20" height="10" rx="2" class="segment segment1"></rect>
+                                        <rect x="160" y="75" width="20" height="10" rx="2" class="segment segment2"></rect>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>User Datagram Protocol (UDP)</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>UDP is a connectionless, unreliable transport protocol that provides minimal overhead and no guarantees of delivery, ordering, or duplicate protection.</li>
+                                <li>UDP header is simple, containing only source and destination port numbers, length, and an optional checksum for error detection.</li>
+                                <li>Applications using UDP typically implement their own reliability mechanisms if needed, or can tolerate occasional packet loss.</li>
+                                <li>UDP is well-suited for real-time applications like video streaming, online gaming, and VoIP where timeliness is more important than reliability.</li>
+                                <li>DNS queries, DHCP, and SNMP are examples of protocols that commonly use UDP as their transport mechanism.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container udp-animation">
+                                <!-- SVG Animation for UDP -->
+                                <svg viewBox="0 0 300 200" class="udp-svg">
+                                    <g class="udp-elements">
+                                        <!-- UDP Sender and Receiver -->
+                                        <rect x="30" y="50" width="60" height="100" rx="5" class="udp-endpoint sender"></rect>
+                                        <rect x="210" y="50" width="60" height="100" rx="5" class="udp-endpoint receiver"></rect>
+                                        
+                                        <text x="60" y="40" class="endpoint-label">Sender</text>
+                                        <text x="240" y="40" class="endpoint-label">Receiver</text>
+                                        
+                                        <!-- UDP Datagrams -->
+                                        <rect x="100" y="60" width="30" height="20" rx="3" class="udp-datagram datagram1"></rect>
+                                        <rect x="140" y="90" width="30" height="20" rx="3" class="udp-datagram datagram2"></rect>
+                                        <rect x="170" y="120" width="30" height="20" rx="3" class="udp-datagram datagram3"></rect>
+                                        
+                                        <!-- UDP Header Structure -->
+                                        <rect x="30" y="170" width="240" height="20" class="udp-header"></rect>
+                                        <line x1="90" y1="170" x2="90" y2="190" class="header-divider"></line>
+                                        <line x1="150" y1="170" x2="150" y2="190" class="header-divider"></line>
+                                        <line x1="210" y1="170" x2="210" y2="190" class="header-divider"></line>
+                                        
+                                        <text x="60" y="185" class="header-field">Source Port</text>
+                                        <text x="120" y="185" class="header-field">Dest Port</text>
+                                        <text x="180" y="185" class="header-field">Length</text>
+                                        <text x="240" y="185" class="header-field">Checksum</text>
+                                        
+                                        <!-- Datagram Paths -->
+                                        <path d="M90 70 L100 70" class="datagram-path path1"></path>
+                                        <path d="M130 70 L210 70" class="datagram-path path1"></path>
+                                        
+                                        <path d="M90 100 L140 100" class="datagram-path path2"></path>
+                                        <path d="M170 100 L210 100" class="datagram-path path2"></path>
+                                        
+                                        <path d="M90 130 L170 130" class="datagram-path path3"></path>
+                                        <path d="M200 130 L210 130" class="datagram-path path3"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Transmission Control Protocol (TCP)</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>TCP is a connection-oriented, reliable transport protocol that ensures ordered delivery of data with error detection and correction.</li>
+                                <li>TCP establishes connections using a three-way handshake (SYN, SYN-ACK, ACK) and terminates them with a four-way handshake (FIN, ACK, FIN, ACK).</li>
+                                <li>Reliability is achieved through sequence numbers, acknowledgments, checksums, and retransmission of lost or corrupted segments.</li>
+                                <li>Flow control using sliding window mechanisms prevents senders from overwhelming receivers with too much data.</li>
+                                <li>Congestion control algorithms like slow start, congestion avoidance, fast retransmit, and fast recovery help manage network traffic.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container tcp-animation">
+                                <!-- SVG Animation for TCP -->
+                                <svg viewBox="0 0 300 200" class="tcp-svg">
+                                    <g class="tcp-elements">
+                                        <!-- TCP Sender and Receiver -->
+                                        <rect x="30" y="30" width="40" height="140" rx="3" class="tcp-endpoint sender"></rect>
+                                        <rect x="230" y="30" width="40" height="140" rx="3" class="tcp-endpoint receiver"></rect>
+                                        
+                                        <text x="50" y="20" class="endpoint-label">Sender</text>
+                                        <text x="250" y="20" class="endpoint-label">Receiver</text>
+                                        
+                                        <!-- Connection Establishment (3-way handshake) -->
+                                        <line x1="70" y1="50" x2="230" y2="70" class="tcp-message syn"></line>
+                                        <text x="140" y="55" class="message-label">SYN</text>
+                                        
+                                        <line x1="230" y1="80" x2="70" y2="100" class="tcp-message syn-ack"></line>
+                                        <text x="140" y="85" class="message-label">SYN-ACK</text>
+                                        
+                                        <line x1="70" y1="110" x2="230" y2="130" class="tcp-message ack"></line>
+                                        <text x="140" y="115" class="message-label">ACK</text>
+                                        
+                                        <!-- Data Transfer -->
+                                        <rect x="100" y="140" width="20" height="10" rx="2" class="tcp-segment segment1"></rect>
+                                        <rect x="130" y="140" width="20" height="10" rx="2" class="tcp-segment segment2"></rect>
+                                        <rect x="160" y="140" width="20" height="10" rx="2" class="tcp-segment segment3"></rect>
+                                        
+                                        <line x1="70" y1="140" x2="230" y2="140" class="data-transfer"></line>
+                                        <line x1="230" y1="150" x2="70" y2="150" class="ack-transfer" stroke-dasharray="5,5"></line>
+                                        
+                                        <!-- TCP Header Structure -->
+                                        <rect x="30" y="170" width="240" height="20" class="tcp-header"></rect>
+                                        <line x1="60" y1="170" x2="60" y2="190" class="header-divider"></line>
+                                        <line x1="90" y1="170" x2="90" y2="190" class="header-divider"></line>
+                                        <line x1="120" y1="170" x2="120" y2="190" class="header-divider"></line>
+                                        <line x1="150" y1="170" x2="150" y2="190" class="header-divider"></line>
+                                        <line x1="180" y1="170" x2="180" y2="190" class="header-divider"></line>
+                                        <line x1="210" y1="170" x2="210" y2="190" class="header-divider"></line>
+                                        
+                                        <text x="45" y="185" class="header-field-small">Ports</text>
+                                        <text x="75" y="185" class="header-field-small">Seq</text>
+                                        <text x="105" y="185" class="header-field-small">Ack</text>
+                                        <text x="135" y="185" class="header-field-small">Flags</text>
+                                        <text x="165" y="185" class="header-field-small">Window</text>
+                                        <text x="195" y="185" class="header-field-small">Checksum</text>
+                                        <text x="240" y="185" class="header-field-small">Options</text>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Flow Control</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>Flow control prevents a fast sender from overwhelming a slow receiver by regulating the rate of data transmission.</li>
+                                <li>TCP implements flow control using a sliding window mechanism, where the receiver advertises how much data it can accept.</li>
+                                <li>The window size in TCP headers indicates the number of bytes the receiver can buffer, dynamically adjusting based on available resources.</li>
+                                <li>Zero window advertisements temporarily pause transmission until the receiver can process more data.</li>
+                                <li>The silly window syndrome, where tiny amounts of data are transmitted inefficiently, is avoided through various algorithms.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container flow-control-animation">
+                                <!-- SVG Animation for Flow Control -->
+                                <svg viewBox="0 0 300 200" class="flow-control-svg">
+                                    <g class="flow-control-elements">
+                                        <!-- Sender and Receiver Buffers -->
+                                        <rect x="30" y="50" width="100" height="40" rx="3" class="sender-buffer"></rect>
+                                        <rect x="170" y="50" width="100" height="40" rx="3" class="receiver-buffer"></rect>
+                                        
+                                        <text x="80" y="40" class="buffer-label">Sender Buffer</text>
+                                        <text x="220" y="40" class="buffer-label">Receiver Buffer</text>
+                                        
+                                        <!-- Buffer Contents -->
+                                        <rect x="30" y="50" width="70" height="40" class="buffer-used sender-used"></rect>
+                                        <rect x="170" y="50" width="30" height="40" class="buffer-used receiver-used"></rect>
+                                        
+                                        <text x="65" y="75" class="buffer-text">Data to Send</text>
+                                        <text x="185" y="75" class="buffer-text">Received</text>
+                                        
+                                        <!-- Window Size Indication -->
+                                        <rect x="100" y="50" width="30" height="40" class="window-size" stroke-dasharray="5,5"></rect>
+                                        <text x="115" y="110" class="window-label">Window</text>
+                                        
+                                        <!-- Flow Control Feedback -->
+                                        <path d="M170 100 C150 120, 130 120, 100 100" class="flow-feedback" stroke-dasharray="5,5"></path>
+                                        <text x="135" y="130" class="feedback-label">Window Advertisement</text>
+                                        
+                                        <!-- Sliding Window Visualization -->
+                                        <rect x="30" y="150" width="240" height="20" class="byte-stream"></rect>
+                                        <rect x="30" y="150" width="60" height="20" class="sent-acked"></rect>
+                                        <rect x="90" y="150" width="60" height="20" class="sent-not-acked"></rect>
+                                        <rect x="150" y="150" width="60" height="20" class="can-send"></rect>
+                                        <rect x="210" y="150" width="60" height="20" class="cannot-send"></rect>
+                                        
+                                        <text x="60" y="165" class="window-section-label">Sent & Acked</text>
+                                        <text x="120" y="165" class="window-section-label">Sent</text>
+                                        <text x="180" y="165" class="window-section-label">Usable</text>
+                                        <text x="240" y="165" class="window-section-label">Outside</text>
+                                        
+                                        <line x1="90" y1="145" x2="90" y2="170" class="window-marker"></line>
+                                        <line x1="210" y1="145" x2="210" y2="170" class="window-marker"></line>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Congestion Control</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>Congestion control prevents network overload by regulating the rate at which hosts send packets into the network.</li>
+                                <li>TCP implements congestion control through algorithms like slow start, congestion avoidance, fast retransmit, and fast recovery.</li>
+                                <li>Slow start begins with a small congestion window that grows exponentially until reaching a threshold or detecting congestion.</li>
+                                <li>Congestion avoidance increases the window size linearly after reaching the threshold, taking a more cautious approach.</li>
+                                <li>Packet loss is interpreted as a sign of congestion, causing TCP to reduce its sending rate to alleviate network stress.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container congestion-control-animation">
+                                <!-- SVG Animation for Congestion Control -->
+                                <svg viewBox="0 0 300 200" class="congestion-control-svg">
+                                    <g class="congestion-control-elements">
+                                        <!-- Congestion Window Graph -->
+                                        <line x1="30" y1="170" x2="270" y2="170" class="graph-axis x-axis"></line>
+                                        <line x1="30" y1="30" x2="30" y2="170" class="graph-axis y-axis"></line>
+                                        
+                                        <text x="150" y="190" class="axis-label">Time</text>
+                                        <text x="15" y="100" class="axis-label">Congestion Window Size</text>
+                                        
+                                        <!-- Slow Start Phase -->
+                                        <path d="M30 170 Q50 150, 70 110 L70 110" class="congestion-phase slow-start"></path>
+                                        <text x="50" y="130" class="phase-label">Slow Start</text>
+                                        
+                                        <!-- Congestion Avoidance Phase -->
+                                        <path d="M70 110 L120 90" class="congestion-phase congestion-avoidance"></path>
+                                        <text x="95" y="85" class="phase-label">Congestion Avoidance</text>
+                                        
+                                        <!-- Congestion Event -->
+                                        <circle cx="120" cy="90" r="3" class="congestion-event"></circle>
+                                        <line x1="120" y1="90" x2="120" y2="140" class="congestion-drop" stroke-dasharray="5,5"></line>
+                                        
+                                        <!-- Fast Recovery Phase -->
+                                        <path d="M120 140 L170 120" class="congestion-phase fast-recovery"></path>
+                                        <text x="145" y="145" class="phase-label">Fast Recovery</text>
+                                        
+                                        <!-- Second Congestion Avoidance Phase -->
+                                        <path d="M170 120 L220 100" class="congestion-phase congestion-avoidance"></path>
+                                        
+                                        <!-- Second Congestion Event -->
+                                        <circle cx="220" cy="100" r="3" class="congestion-event"></circle>
+                                        <line x1="220" y1="100" x2="220" y2="150" class="congestion-drop" stroke-dasharray="5,5"></line>
+                                        
+                                        <!-- Threshold Line -->
+                                        <line x1="70" y1="110" x2="270" y2="110" class="threshold-line" stroke-dasharray="3,3"></line>
+                                        <text x="240" y="105" class="threshold-label">ssthresh</text>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy;2025 Aayush study resources</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module IV: Network Layer - Computer Networks</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h1>Computer Networks</h1>
+            </div>
+            <div class="theme-toggle">
+                <span class="toggle-icon"></span>
+            </div>
+        </header>
+
+        <section class="module-header">
+            <h2>Module IV: Network Layer</h2>
+            <a href="index.html" class="back-button">← Back to Modules</a>
+        </section>
+
+        <section class="content-section">
+            <div class="module-content">
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Network Layer Design Issues</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>The network layer is responsible for routing packets from source to destination across multiple networks.</li>
+                                <li>Key design issues include addressing, routing algorithms, congestion control, and quality of service.</li>
+                                <li>Connection-oriented vs. connectionless service models determine how packets are handled and whether a path is established before data transfer.</li>
+                                <li>Internetworking between different network types requires protocols that can handle diverse technologies and addressing schemes.</li>
+                                <li>The network layer must balance efficiency, reliability, and fairness in resource allocation.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container network-design-animation">
+                                <!-- SVG Animation for Network Layer Design Issues -->
+                                <svg viewBox="0 0 300 200" class="network-design-svg">
+                                    <g class="network-design-elements">
+                                        <!-- Network Clouds -->
+                                        <ellipse cx="75" cy="50" rx="40" ry="25" class="network-cloud cloud1"></ellipse>
+                                        <ellipse cx="225" cy="50" rx="40" ry="25" class="network-cloud cloud2"></ellipse>
+                                        <ellipse cx="75" cy="150" rx="40" ry="25" class="network-cloud cloud3"></ellipse>
+                                        <ellipse cx="225" cy="150" rx="40" ry="25" class="network-cloud cloud4"></ellipse>
+                                        
+                                        <!-- Routers -->
+                                        <rect x="140" y="75" width="20" height="20" class="router router1"></rect>
+                                        <rect x="140" y="105" width="20" height="20" class="router router2"></rect>
+                                        
+                                        <!-- Connections -->
+                                        <line x1="75" y1="50" x2="140" y2="85" class="network-connection"></line>
+                                        <line x1="225" y1="50" x2="160" y2="85" class="network-connection"></line>
+                                        <line x1="75" y1="150" x2="140" y2="115" class="network-connection"></line>
+                                        <line x1="225" y1="150" x2="160" y2="115" class="network-connection"></line>
+                                        <line x1="150" y1="95" x2="150" y2="105" class="network-connection"></line>
+                                        
+                                        <!-- Packets -->
+                                        <rect x="100" y="60" width="10" height="5" class="network-packet packet1"></rect>
+                                        <rect x="190" y="60" width="10" height="5" class="network-packet packet2"></rect>
+                                        <rect x="100" y="140" width="10" height="5" class="network-packet packet3"></rect>
+                                        <rect x="190" y="140" width="10" height="5" class="network-packet packet4"></rect>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Routing Algorithms</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>Routing algorithms determine the optimal path for packets to travel from source to destination through the network.</li>
+                                <li>Static routing uses fixed, manually configured routes, while dynamic routing adapts to network changes and failures.</li>
+                                <li>Distance vector algorithms (like RIP) have routers exchange information with neighbors about their distance to all known networks.</li>
+                                <li>Link state algorithms (like OSPF) have routers broadcast information about their connections to all routers in the network, allowing each to build a complete map.</li>
+                                <li>Path vector algorithms (like BGP) exchange information about entire paths to destinations, helping prevent routing loops in complex networks.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container routing-animation">
+                                <!-- SVG Animation for Routing Algorithms -->
+                                <svg viewBox="0 0 300 200" class="routing-svg">
+                                    <g class="routing-elements">
+                                        <!-- Network Nodes -->
+                                        <circle cx="50" cy="50" r="15" class="routing-node node1"></circle>
+                                        <circle cx="150" cy="50" r="15" class="routing-node node2"></circle>
+                                        <circle cx="250" cy="50" r="15" class="routing-node node3"></circle>
+                                        <circle cx="50" cy="150" r="15" class="routing-node node4"></circle>
+                                        <circle cx="150" cy="150" r="15" class="routing-node node5"></circle>
+                                        <circle cx="250" cy="150" r="15" class="routing-node node6"></circle>
+                                        
+                                        <!-- Node Labels -->
+                                        <text x="50" y="55" class="node-label">A</text>
+                                        <text x="150" y="55" class="node-label">B</text>
+                                        <text x="250" y="55" class="node-label">C</text>
+                                        <text x="50" y="155" class="node-label">D</text>
+                                        <text x="150" y="155" class="node-label">E</text>
+                                        <text x="250" y="155" class="node-label">F</text>
+                                        
+                                        <!-- Links with Costs -->
+                                        <line x1="65" y1="50" x2="135" y2="50" class="routing-link"></line>
+                                        <text x="100" y="45" class="link-cost">5</text>
+                                        
+                                        <line x1="165" y1="50" x2="235" y2="50" class="routing-link"></line>
+                                        <text x="200" y="45" class="link-cost">3</text>
+                                        
+                                        <line x1="50" y1="65" x2="50" y2="135" class="routing-link"></line>
+                                        <text x="45" y="100" class="link-cost">2</text>
+                                        
+                                        <line x1="150" y1="65" x2="150" y2="135" class="routing-link"></line>
+                                        <text x="145" y="100" class="link-cost">4</text>
+                                        
+                                        <line x1="250" y1="65" x2="250" y2="135" class="routing-link"></line>
+                                        <text x="245" y="100" class="link-cost">1</text>
+                                        
+                                        <line x1="65" y1="150" x2="135" y2="150" class="routing-link"></line>
+                                        <text x="100" y="145" class="link-cost">6</text>
+                                        
+                                        <line x1="165" y1="150" x2="235" y2="150" class="routing-link"></line>
+                                        <text x="200" y="145" class="link-cost">2</text>
+                                        
+                                        <line x1="65" y1="65" x2="135" y2="135" class="routing-link"></line>
+                                        <text x="100" y="100" class="link-cost">7</text>
+                                        
+                                        <line x1="165" y1="65" x2="235" y2="135" class="routing-link"></line>
+                                        <text x="200" y="100" class="link-cost">3</text>
+                                        
+                                        <!-- Shortest Path Highlight -->
+                                        <line x1="50" y1="50" x2="50" y2="150" class="shortest-path"></line>
+                                        <line x1="50" y1="150" x2="150" y2="150" class="shortest-path"></line>
+                                        <line x1="150" y1="150" x2="250" y2="150" class="shortest-path"></line>
+                                        <line x1="250" y1="150" x2="250" y2="50" class="shortest-path"></line>
+                                        
+                                        <!-- Packet Movement -->
+                                        <circle cx="50" cy="50" r="5" class="routing-packet"></circle>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>IP Addressing</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>IP addresses uniquely identify devices on a network, with IPv4 using 32-bit addresses and IPv6 using 128-bit addresses.</li>
+                                <li>IPv4 addresses are typically written in dotted-decimal notation (e.g., 192.168.1.1), while IPv6 uses hexadecimal notation with colons (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334).</li>
+                                <li>IP addresses are divided into network and host portions, with subnet masks determining the boundary between them.</li>
+                                <li>Classless Inter-Domain Routing (CIDR) notation (e.g., 192.168.1.0/24) specifies the number of bits used for the network portion.</li>
+                                <li>Special address ranges include private addresses (not routable on the public internet), loopback addresses, and multicast addresses.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container ip-addressing-animation">
+                                <!-- SVG Animation for IP Addressing -->
+                                <svg viewBox="0 0 300 200" class="ip-addressing-svg">
+                                    <g class="ip-addressing-elements">
+                                        <!-- IPv4 Address Structure -->
+                                        <rect x="30" y="40" width="240" height="30" class="ipv4-container"></rect>
+                                        <line x1="90" y1="40" x2="90" y2="70" class="ip-divider"></line>
+                                        <line x1="150" y1="40" x2="150" y2="70" class="ip-divider"></line>
+                                        <line x1="210" y1="40" x2="210" y2="70" class="ip-divider"></line>
+                                        
+                                        <text x="60" y="60" class="ip-octet">192</text>
+                                        <text x="120" y="60" class="ip-octet">168</text>
+                                        <text x="180" y="60" class="ip-octet">1</text>
+                                        <text x="240" y="60" class="ip-octet">10</text>
+                                        
+                                        <text x="150" y="30" class="ip-label">IPv4 Address: 192.168.1.10</text>
+                                        
+                                        <!-- Subnet Mask -->
+                                        <rect x="30" y="90" width="240" height="30" class="subnet-container"></rect>
+                                        <line x1="90" y1="90" x2="90" y2="120" class="ip-divider"></line>
+                                        <line x1="150" y1="90" x2="150" y2="120" class="ip-divider"></line>
+                                        <line x1="210" y1="90" x2="210" y2="120" class="ip-divider"></line>
+                                        
+                                        <text x="60" y="110" class="ip-octet">255</text>
+                                        <text x="120" y="110" class="ip-octet">255</text>
+                                        <text x="180" y="110" class="ip-octet">255</text>
+                                        <text x="240" y="110" class="ip-octet">0</text>
+                                        
+                                        <text x="150" y="80" class="ip-label">Subnet Mask: 255.255.255.0 (/24)</text>
+                                        
+                                        <!-- Network vs Host Portion -->
+                                        <rect x="30" y="140" width="180" height="30" class="network-portion"></rect>
+                                        <rect x="210" y="140" width="60" height="30" class="host-portion"></rect>
+                                        
+                                        <text x="120" y="160" class="portion-label">Network: 192.168.1.0</text>
+                                        <text x="240" y="160" class="portion-label">Host</text>
+                                        
+                                        <text x="150" y="130" class="ip-label">Network vs. Host Portions</text>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Internet Protocol (IP)</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>IP is the primary protocol of the network layer, responsible for delivering packets from source to destination based on IP addresses.</li>
+                                <li>IPv4 and IPv6 are the two main versions, with IPv6 designed to address the exhaustion of IPv4 addresses and provide additional features.</li>
+                                <li>IP provides a connectionless, best-effort delivery service, meaning it doesn't guarantee packet delivery or proper sequencing.</li>
+                                <li>IP packets (datagrams) contain headers with source and destination addresses, protocol information, time-to-live values, and other control data.</li>
+                                <li>IP fragmentation allows large packets to be broken into smaller pieces when traversing networks with different maximum transmission unit (MTU) sizes.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container ip-protocol-animation">
+                                <!-- SVG Animation for Internet Protocol -->
+                                <svg viewBox="0 0 300 200" class="ip-protocol-svg">
+                                    <g class="ip-protocol-elements">
+                                        <!-- IP Packet Structure -->
+                                        <rect x="30" y="40" width="240" height="60" rx="5" class="ip-packet"></rect>
+                                        <rect x="30" y="40" width="80" height="60" class="ip-header"></rect>
+                                        <rect x="110" y="40" width="160" height="60" class="ip-payload"></rect>
+                                        
+                                        <text x="70" y="70" class="packet-label">Header</text>
+                                        <text x="190" y="70" class="packet-label">Payload</text>
+                                        
+                                        <!-- IP Header Fields -->
+                                        <rect x="30" y="120" width="240" height="60" class="ip-header-detail"></rect>
+                                        <line x1="60" y1="120" x2="60" y2="180" class="header-divider"></line>
+                                        <line x1="90" y1="120" x2="90" y2="180" class="header-divider"></line>
+                                        <line x1="120" y1="120" x2="120" y2="180" class="header-divider"></line>
+                                        <line x1="150" y1="120" x2="150" y2="180" class="header-divider"></line>
+                                        <line x1="180" y1="120" x2="180" y2="180" class="header-divider"></line>
+                                        <line x1="210" y1="120" x2="210" y2="180" class="header-divider"></line>
+                                        <line x1="240" y1="120" x2="240" y2="180" class="header-divider"></line>
+                                        
+                                        <text x="45" y="150" class="header-field">Ver</text>
+                                        <text x="75" y="150" class="header-field">IHL</text>
+                                        <text x="105" y="150" class="header-field">ToS</text>
+                                        <text x="135" y="150" class="header-field">Length</text>
+                                        <text x="165" y="150" class="header-field">ID</text>
+                                        <text x="195" y="150" class="header-field">Flags</text>
+                                        <text x="225" y="150" class="header-field">Offset</text>
+                                        <text x="270" y="150" class="header-field">...</text>
+                                        
+                                        <text x="150" y="110" class="ip-label">IP Header Fields</text>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Subnetting and Supernetting</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>Subnetting divides a large network into smaller, more manageable subnetworks to improve efficiency and security.</li>
+                                <li>By borrowing bits from the host portion of an IP address, administrators can create multiple subnets within their assigned address space.</li>
+                                <li>Supernetting (or aggregation) combines multiple networks into a single larger network for routing purposes, reducing the size of routing tables.</li>
+                                <li>Variable Length Subnet Masking (VLSM) allows different subnets within the same network to have different subnet masks, optimizing address usage.</li>
+                                <li>Proper subnet planning considers factors like the number of required hosts, future growth, security boundaries, and broadcast domain size.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container subnetting-animation">
+                                <!-- SVG Animation for Subnetting and Supernetting -->
+                                <svg viewBox="0 0 300 200" class="subnetting-svg">
+                                    <g class="subnetting-elements">
+                                        <!-- Original Network -->
+                                        <rect x="30" y="30" width="240" height="40" rx="5" class="original-network"></rect>
+                                        <text x="150" y="55" class="network-label">192.168.1.0/24 (256 hosts)</text>
+                                        
+                                        <!-- Subnets -->
+                                        <rect x="30" y="100" width="110" height="30" rx="5" class="subnet subnet1"></rect>
+                                        <rect x="160" y="100" width="110" height="30" rx="5" class="subnet subnet2"></rect>
+                                        <text x="85" y="120" class="subnet-label">192.168.1.0/25</text>
+                                        <text x="215" y="120" class="subnet-label">192.168.1.128/25</text>
+                                        
+                                        <rect x="30" y="150" width="50" height="30" rx="5" class="subnet subnet3"></rect>
+                                        <rect x="90" y="150" width="50" height="30" rx="5" class="subnet subnet4"></rect>
+                                        <rect x="160" y="150" width="50" height="30" rx="5" class="subnet subnet5"></rect>
+                                        <rect x="220" y="150" width="50" height="30" rx="5" class="subnet subnet6"></rect>
+                                        
+                                        <text x="55" y="170" class="subnet-label-small">.0/26</text>
+                                        <text x="115" y="170" class="subnet-label-small">.64/26</text>
+                                        <text x="185" y="170" class="subnet-label-small">.128/26</text>
+                                        <text x="245" y="170" class="subnet-label-small">.192/26</text>
+                                        
+                                        <!-- Arrows -->
+                                        <line x1="150" y1="70" x2="85" y2="100" class="subnet-arrow"></line>
+                                        <line x1="150" y1="70" x2="215" y2="100" class="subnet-arrow"></line>
+                                        
+                                        <line x1="85" y1="130" x2="55" y2="150" class="subnet-arrow"></line>
+                                        <line x1="85" y1="130" x2="115" y2="150" class="subnet-arrow"></line>
+                                        <line x1="215" y1="130" x2="185" y2="150" class="subnet-arrow"></line>
+                                        <line x1="215" y1="130" x2="245" y2="150" class="subnet-arrow"></line>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy;2025 Aayush study resources</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

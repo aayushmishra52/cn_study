@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module VI: Application Layer - Computer Networks</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h1>Computer Networks</h1>
+            </div>
+            <div class="theme-toggle">
+                <span class="toggle-icon"></span>
+            </div>
+        </header>
+
+        <section class="module-header">
+            <h2>Module VI: Application Layer</h2>
+            <a href="index.html" class="back-button">← Back to Modules</a>
+        </section>
+
+        <section class="content-section">
+            <div class="module-content">
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Domain Name System (DNS)</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>DNS is a hierarchical and decentralized naming system for computers, services, or other resources connected to the Internet or a private network.</li>
+                                <li>It translates human-readable domain names (like www.example.com) into IP addresses (like 192.0.2.1) that computers use to identify each other on the network.</li>
+                                <li>The DNS hierarchy consists of root servers, top-level domain (TLD) servers, authoritative name servers, and recursive resolvers.</li>
+                                <li>DNS uses both UDP (port 53) for regular queries and TCP (port 53) for zone transfers and queries exceeding 512 bytes.</li>
+                                <li>DNS records include A (IPv4 address), AAAA (IPv6 address), CNAME (canonical name), MX (mail exchange), NS (name server), and many others.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container dns-animation">
+                                <!-- SVG Animation for DNS -->
+                                <svg viewBox="0 0 300 200" class="dns-svg">
+                                    <g class="dns-elements">
+                                        <!-- Client -->
+                                        <rect x="30" y="80" width="40" height="30" rx="3" class="client"></rect>
+                                        <text x="50" y="70" class="endpoint-label">Client</text>
+                                        
+                                        <!-- Recursive Resolver -->
+                                        <rect x="120" y="80" width="40" height="30" rx="3" class="resolver"></rect>
+                                        <text x="140" y="70" class="endpoint-label">Resolver</text>
+                                        
+                                        <!-- Root Server -->
+                                        <rect x="210" y="30" width="40" height="20" rx="3" class="dns-server root"></rect>
+                                        <text x="230" y="20" class="server-label">Root</text>
+                                        
+                                        <!-- TLD Server -->
+                                        <rect x="210" y="80" width="40" height="20" rx="3" class="dns-server tld"></rect>
+                                        <text x="230" y="70" class="server-label">TLD</text>
+                                        
+                                        <!-- Authoritative Server -->
+                                        <rect x="210" y="130" width="40" height="20" rx="3" class="dns-server auth"></rect>
+                                        <text x="230" y="120" class="server-label">Auth</text>
+                                        
+                                        <!-- Query Paths -->
+                                        <path d="M70 95 L120 95" class="dns-path query1"></path>
+                                        <path d="M160 80 L210 40" class="dns-path query2"></path>
+                                        <path d="M160 95 L210 90" class="dns-path query3"></path>
+                                        <path d="M160 110 L210 140" class="dns-path query4"></path>
+                                        
+                                        <!-- DNS Packets -->
+                                        <circle cx="95" y="95" r="3" class="dns-packet packet1"></circle>
+                                        <circle cx="185" y="60" r="3" class="dns-packet packet2"></circle>
+                                        <circle cx="185" y="95" r="3" class="dns-packet packet3"></circle>
+                                        <circle cx="185" y="125" r="3" class="dns-packet packet4"></circle>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Hypertext Transfer Protocol (HTTP)</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>HTTP is an application layer protocol for distributed, collaborative, hypermedia information systems, forming the foundation of data communication for the World Wide Web.</li>
+                                <li>It follows a client-server model where clients (browsers) send requests to servers, which respond with requested resources.</li>
+                                <li>HTTP is stateless, meaning each request from a client to server is independent and unrelated to previous requests.</li>
+                                <li>HTTP methods include GET (retrieve data), POST (submit data), PUT (update data), DELETE (remove data), and others.</li>
+                                <li>HTTPS (HTTP Secure) adds encryption using TLS/SSL to protect the privacy and integrity of exchanged data.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container http-animation">
+                                <!-- SVG Animation for HTTP -->
+                                <svg viewBox="0 0 300 200" class="http-svg">
+                                    <g class="http-elements">
+                                        <!-- Client/Browser -->
+                                        <rect x="30" y="50" width="60" height="40" rx="3" class="browser"></rect>
+                                        <rect x="40" y="60" width="40" height="20" rx="2" class="browser-screen"></rect>
+                                        <text x="60" y="40" class="endpoint-label">Browser</text>
+                                        
+                                        <!-- Web Server -->
+                                        <rect x="210" y="50" width="60" height="100" rx="3" class="web-server"></rect>
+                                        <rect x="220" y="60" width="40" height="10" class="server-rack"></rect>
+                                        <rect x="220" y="80" width="40" height="10" class="server-rack"></rect>
+                                        <rect x="220" y="100" width="40" height="10" class="server-rack"></rect>
+                                        <text x="240" y="40" class="endpoint-label">Web Server</text>
+                                        
+                                        <!-- HTTP Request -->
+                                        <path d="M90 70 L210 70" class="http-path request"></path>
+                                        <rect x="130" y="60" width="40" height="15" rx="2" class="http-message request-msg"></rect>
+                                        <text x="150" y="55" class="message-label">Request</text>
+                                        
+                                        <!-- HTTP Response -->
+                                        <path d="M210 90 L90 90" class="http-path response"></path>
+                                        <rect x="130" y="85" width="40" height="15" rx="2" class="http-message response-msg"></rect>
+                                        <text x="150" y="110" class="message-label">Response</text>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Simple Mail Transfer Protocol (SMTP)</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>SMTP is an Internet standard for electronic mail (email) transmission, used for sending messages between servers and from mail clients to mail servers.</li>
+                                <li>It operates on TCP port 25 (or port 587 for secure submission) and uses a series of text commands and responses for communication.</li>
+                                <li>SMTP handles only the sending of messages; other protocols like POP3 or IMAP are used to retrieve messages from mailboxes.</li>
+                                <li>The protocol includes commands like HELO/EHLO (identify client), MAIL FROM (specify sender), RCPT TO (specify recipient), and DATA (message content).</li>
+                                <li>SMTP extensions (ESMTP) add features like authentication, encryption, and the ability to transmit binary data.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container smtp-animation">
+                                <!-- SVG Animation for SMTP -->
+                                <svg viewBox="0 0 300 200" class="smtp-svg">
+                                    <g class="smtp-elements">
+                                        <!-- Mail Client -->
+                                        <rect x="30" y="50" width="40" height="30" rx="3" class="mail-client"></rect>
+                                        <text x="50" y="40" class="endpoint-label">Mail Client</text>
+                                        
+                                        <!-- Sender's Mail Server -->
+                                        <rect x="120" y="50" width="40" height="60" rx="3" class="mail-server sender-server"></rect>
+                                        <text x="140" y="40" class="server-label">Sender Server</text>
+                                        
+                                        <!-- Recipient's Mail Server -->
+                                        <rect x="210" y="50" width="40" height="60" rx="3" class="mail-server recipient-server"></rect>
+                                        <text x="230" y="40" class="server-label">Recipient Server</text>
+                                        
+                                        <!-- Mail Client (Recipient) -->
+                                        <rect x="230" y="150" width="40" height="30" rx="3" class="mail-client"></rect>
+                                        <text x="250" y="190" class="endpoint-label">Mail Client</text>
+                                        
+                                        <!-- SMTP Connections -->
+                                        <path d="M70 65 L120 65" class="smtp-path client-to-server"></path>
+                                        <path d="M160 65 L210 65" class="smtp-path server-to-server"></path>
+                                        <path d="M230 110 L230 150" class="smtp-path server-to-client"></path>
+                                        
+                                        <!-- Email Message -->
+                                        <rect x="85" y="60" width="20" height="10" rx="2" class="email-message msg1"></rect>
+                                        <rect x="175" y="60" width="20" height="10" rx="2" class="email-message msg2"></rect>
+                                        <rect x="225" y="130" width="10" height="10" rx="2" class="email-message msg3"></rect>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>File Transfer Protocol (FTP)</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>FTP is a standard network protocol used for transferring files between a client and server on a computer network.</li>
+                                <li>It uses separate control (port 21) and data (port 20 or dynamic ports) connections for command transmission and file transfer.</li>
+                                <li>FTP supports two modes: active mode (server initiates data connection) and passive mode (client initiates data connection).</li>
+                                <li>Common FTP commands include USER (username), PASS (password), LIST (directory listing), RETR (retrieve file), and STOR (store file).</li>
+                                <li>FTPS (FTP Secure) and SFTP (SSH File Transfer Protocol) are secure alternatives that add encryption to protect data during transfer.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container ftp-animation">
+                                <!-- SVG Animation for FTP -->
+                                <svg viewBox="0 0 300 200" class="ftp-svg">
+                                    <g class="ftp-elements">
+                                        <!-- FTP Client -->
+                                        <rect x="30" y="80" width="40" height="40" rx="3" class="ftp-client"></rect>
+                                        <text x="50" y="70" class="endpoint-label">FTP Client</text>
+                                        
+                                        <!-- FTP Server -->
+                                        <rect x="230" y="80" width="40" height="40" rx="3" class="ftp-server"></rect>
+                                        <text x="250" y="70" class="endpoint-label">FTP Server</text>
+                                        
+                                        <!-- Control Connection -->
+                                        <path d="M70 90 L230 90" class="ftp-path control-path"></path>
+                                        <text x="150" y="85" class="connection-label">Control Connection (21)</text>
+                                        
+                                        <!-- Data Connection -->
+                                        <path d="M70 110 L230 110" class="ftp-path data-path"></path>
+                                        <text x="150" y="125" class="connection-label">Data Connection (20)</text>
+                                        
+                                        <!-- FTP Commands -->
+                                        <rect x="100" y="85" width="20" height="10" rx="2" class="ftp-command cmd1"></rect>
+                                        <rect x="180" y="85" width="20" height="10" rx="2" class="ftp-command cmd2"></rect>
+                                        
+                                        <!-- File Transfer -->
+                                        <rect x="150" y="105" width="30" height="10" rx="2" class="file-transfer"></rect>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Telnet and SSH</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>Telnet is an application layer protocol that provides a bidirectional interactive text-oriented communication facility using a virtual terminal connection.</li>
+                                <li>It operates on TCP port 23 and allows users to connect to remote computers and interact with them as if they were directly connected.</li>
+                                <li>Telnet transmits data in plaintext, making it vulnerable to eavesdropping and man-in-the-middle attacks.</li>
+                                <li>SSH (Secure Shell) is a secure replacement for Telnet that encrypts all traffic, preventing unauthorized interception of sensitive data.</li>
+                                <li>SSH operates on TCP port 22 and provides secure remote login, command execution, and file transfer capabilities.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container telnet-ssh-animation">
+                                <!-- SVG Animation for Telnet/SSH -->
+                                <svg viewBox="0 0 300 200" class="telnet-ssh-svg">
+                                    <g class="telnet-ssh-elements">
+                                        <!-- Client Terminal -->
+                                        <rect x="30" y="50" width="60" height="40" rx="3" class="terminal-client"></rect>
+                                        <rect x="35" y="55" width="50" height="30" rx="1" class="terminal-screen"></rect>
+                                        <text x="60" y="40" class="endpoint-label">Client Terminal</text>
+                                        
+                                        <!-- Remote Server -->
+                                        <rect x="210" y="50" width="60" height="40" rx="3" class="remote-server"></rect>
+                                        <text x="240" y="40" class="endpoint-label">Remote Server</text>
+                                        
+                                        <!-- Telnet Connection (Unsecured) -->
+                                        <path d="M90 60 L210 60" class="telnet-path" stroke-dasharray="5,5"></path>
+                                        <text x="150" y="55" class="connection-label">Telnet (Unsecured)</text>
+                                        
+                                        <!-- SSH Connection (Secured) -->
+                                        <path d="M90 80 L210 80" class="ssh-path"></path>
+                                        <text x="150" y="95" class="connection-label">SSH (Encrypted)</text>
+                                        
+                                        <!-- Data Packets -->
+                                        <rect x="120" y="55" width="15" height="10" rx="1" class="telnet-data"></rect>
+                                        <rect x="165" y="55" width="15" height="10" rx="1" class="telnet-data"></rect>
+                                        
+                                        <!-- Encrypted Packets -->
+                                        <rect x="120" y="75" width="15" height="10" rx="1" class="ssh-data"></rect>
+                                        <rect x="165" y="75" width="15" height="10" rx="1" class="ssh-data"></rect>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Dynamic Host Configuration Protocol (DHCP)</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>DHCP is a network management protocol used to dynamically assign IP addresses and other network configuration parameters to devices on a network.</li>
+                                <li>It operates using a client-server model, with DHCP servers providing configuration information to DHCP clients.</li>
+                                <li>The DHCP process involves four steps: Discovery, Offer, Request, and Acknowledgment (DORA).</li>
+                                <li>DHCP uses UDP ports 67 (server) and 68 (client) for communication.</li>
+                                <li>Besides IP addresses, DHCP can provide subnet masks, default gateways, DNS server addresses, and lease duration information.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container dhcp-animation">
+                                <!-- SVG Animation for DHCP -->
+                                <svg viewBox="0 0 300 200" class="dhcp-svg">
+                                    <g class="dhcp-elements">
+                                        <!-- DHCP Client -->
+                                        <rect x="30" y="80" width="40" height="30" rx="3" class="dhcp-client"></rect>
+                                        <text x="50" y="70" class="endpoint-label">DHCP Client</text>
+                                        
+                                        <!-- DHCP Server -->
+                                        <rect x="230" y="80" width="40" height="30" rx="3" class="dhcp-server"></rect>
+                                        <text x="250" y="70" class="endpoint-label">DHCP Server</text>
+                                        
+                                        <!-- DHCP Process -->
+                                        <!-- Discovery -->
+                                        <path d="M70 85 L230 85" class="dhcp-path discovery"></path>
+                                        <rect x="120" y="80" width="30" height="10" rx="2" class="dhcp-message discovery-msg"></rect>
+                                        <text x="135" y="75" class="message-label">DISCOVER</text>
+                                        
+                                        <!-- Offer -->
+                                        <path d="M230 95 L70 95" class="dhcp-path offer"></path>
+                                        <rect x="150" y="90" width="30" height="10" rx="2" class="dhcp-message offer-msg"></rect>
+                                        <text x="165" y="105" class="message-label">OFFER</text>
+                                        
+                                        <!-- Request -->
+                                        <path d="M70 105 L230 105" class="dhcp-path request"></path>
+                                        <rect x="120" y="100" width="30" height="10" rx="2" class="dhcp-message request-msg"></rect>
+                                        <text x="135" y="120" class="message-label">REQUEST</text>
+                                        
+                                        <!-- Acknowledgment -->
+                                        <path d="M230 115 L70 115" class="dhcp-path ack"></path>
+                                        <rect x="150" y="110" width="30" height="10" rx="2" class="dhcp-message ack-msg"></rect>
+                                        <text x="165" y="130" class="message-label">ACK</text>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Name Server Functions</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>Name servers are essential components of the DNS infrastructure that store and provide domain name information.</li>
+                                <li>Authoritative name servers hold the official records for domains they are responsible for and provide definitive answers to DNS queries.</li>
+                                <li>Recursive resolvers (also called DNS resolvers) query other name servers on behalf of clients to resolve domain names.</li>
+                                <li>Root name servers are at the top of the DNS hierarchy and direct queries to the appropriate top-level domain (TLD) servers.</li>
+                                <li>Caching name servers store previously resolved queries temporarily to improve performance and reduce network traffic.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container name-server-animation">
+                                <!-- SVG Animation for Name Server Functions -->
+                                <svg viewBox="0 0 300 200" class="name-server-svg">
+                                    <g class="name-server-elements">
+                                        <!-- DNS Hierarchy -->
+                                        <!-- Root Level -->
+                                        <rect x="130" y="30" width="40" height="20" rx="3" class="root-server"></rect>
+                                        <text x="150" y="20" class="server-label">Root</text>
+                                        
+                                        <!-- TLD Level -->
+                                        <rect x="70" y="80" width="40" height="20" rx="3" class="tld-server"></rect>
+                                        <text x="90" y="70" class="server-label">.com</text>
+                                        
+                                        <rect x="130" y="80" width="40" height="20" rx="3" class="tld-server"></rect>
+                                        <text x="150" y="70" class="server-label">.org</text>
+                                        
+                                        <rect x="190" y="80" width="40" height="20" rx="3" class="tld-server"></rect>
+                                        <text x="210" y="70" class="server-label">.net</text>
+                                        
+                                        <!-- Domain Level -->
+                                        <rect x="40" y="130" width="40" height="20" rx="3" class="domain-server"></rect>
+                                        <text x="60" y="120" class="server-label">example.com</text>
+                                        
+                                        <rect x="100" y="130" width="40" height="20" rx="3" class="domain-server"></rect>
+                                        <text x="120" y="120" class="server-label">google.com</text>
+                                        
+                                        <rect x="160" y="130" width="40" height="20" rx="3" class="domain-server"></rect>
+                                        <text x="180" y="120" class="server-label">mozilla.org</text>
+                                        
+                                        <rect x="220" y="130" width="40" height="20" rx="3" class="domain-server"></rect>
+                                        <text x="240" y="120" class="server-label">cloudflare.net</text>
+                                        
+                                        <!-- Hierarchy Connections -->
+                                        <line x1="150" y1="50" x2="90" y2="80" class="hierarchy-connection"></line>
+                                        <line x1="150" y1="50" x2="150" y2="80" class="hierarchy-connection"></line>
+                                        <line x1="150" y1="50" x2="210" y2="80" class="hierarchy-connection"></line>
+                                        
+                                        <line x1="90" y1="100" x2="60" y2="130" class="hierarchy-connection"></line>
+                                        <line x1="90" y1="100" x2="120" y2="130" class="hierarchy-connection"></line>
+                                        <line x1="150" y1="100" x2="180" y2="130" class="hierarchy-connection"></line>
+                                        <line x1="210" y1="100" x2="240" y2="130" class="hierarchy-connection"></line>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Aayush study resource</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

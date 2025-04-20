@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module III: Data Link Layer - Computer Networks</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h1>Computer Networks</h1>
+            </div>
+            <div class="theme-toggle">
+                <span class="toggle-icon"></span>
+            </div>
+        </header>
+
+        <section class="module-header">
+            <h2>Module III: Data Link Layer</h2>
+            <a href="index.html" class="back-button">← Back to Modules</a>
+        </section>
+
+        <section class="content-section">
+            <div class="module-content">
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Data Link Layer Design Issues</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>The data link layer is responsible for reliable transfer of data frames between adjacent nodes over a physical link.</li>
+                                <li>Key design issues include framing methods, error detection and correction, flow control, and access control for shared media.</li>
+                                <li>Framing involves dividing the bit stream from the physical layer into manageable data units called frames.</li>
+                                <li>Error control mechanisms detect and possibly correct errors that occur during transmission.</li>
+                                <li>Flow control ensures that a fast sender doesn't overwhelm a slow receiver with more data than it can process.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container datalink-design-animation">
+                                <!-- SVG Animation for Data Link Layer Design Issues -->
+                                <svg viewBox="0 0 300 200" class="datalink-design-svg">
+                                    <g class="datalink-elements">
+                                        <!-- Sender and Receiver -->
+                                        <rect x="30" y="70" width="60" height="60" rx="5" class="datalink-node sender"></rect>
+                                        <rect x="210" y="70" width="60" height="60" rx="5" class="datalink-node receiver"></rect>
+                                        <text x="60" y="105" class="node-label">Sender</text>
+                                        <text x="240" y="105" class="node-label">Receiver</text>
+                                        
+                                        <!-- Physical Link -->
+                                        <line x1="90" y1="100" x2="210" y2="100" class="physical-link"></line>
+                                        
+                                        <!-- Frames -->
+                                        <rect x="100" y="90" width="30" height="20" rx="2" class="data-frame frame1"></rect>
+                                        <rect x="140" y="90" width="30" height="20" rx="2" class="data-frame frame2"></rect>
+                                        <rect x="180" y="90" width="20" height="20" rx="2" class="data-frame frame3"></rect>
+                                        
+                                        <!-- Flow Control -->
+                                        <path d="M210 110 L180 130 L90 130" class="flow-control-signal" stroke-dasharray="5,5"></path>
+                                        <text x="130" y="145" class="control-label">Flow Control</text>
+                                        
+                                        <!-- Error Detection -->
+                                        <circle cx="160" y="70" r="15" class="error-detection-circle"></circle>
+                                        <text x="160" y="74" class="error-label">CRC</text>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Error Detection and Correction</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>Error detection codes add redundancy to data to detect if errors occurred during transmission.</li>
+                                <li>Common error detection methods include parity checks, checksums, and Cyclic Redundancy Checks (CRC).</li>
+                                <li>Error correction codes not only detect errors but also enable the receiver to reconstruct the original data without retransmission.</li>
+                                <li>Hamming codes and Reed-Solomon codes are examples of error correction techniques that can recover from certain types of errors.</li>
+                                <li>The choice between error detection and correction depends on the reliability requirements and the cost of retransmission.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container error-control-animation">
+                                <!-- SVG Animation for Error Detection and Correction -->
+                                <svg viewBox="0 0 300 200" class="error-control-svg">
+                                    <g class="error-control-elements">
+                                        <!-- Original Data -->
+                                        <rect x="30" y="30" width="240" height="20" class="data-container"></rect>
+                                        <text x="40" y="45" class="data-text">10110101</text>
+                                        <text x="120" y="45" class="data-text">01011010</text>
+                                        <text x="200" y="45" class="data-text">11001100</text>
+                                        
+                                        <!-- Parity Check -->
+                                        <rect x="30" y="70" width="240" height="20" class="parity-container"></rect>
+                                        <text x="40" y="85" class="data-text">10110101</text>
+                                        <text x="120" y="85" class="data-text">01011010</text>
+                                        <text x="200" y="85" class="data-text">11001100</text>
+                                        <text x="280" y="85" class="parity-bit">1</text>
+                                        <text x="15" y="85" class="method-label">Parity</text>
+                                        
+                                        <!-- CRC -->
+                                        <rect x="30" y="110" width="240" height="20" class="crc-container"></rect>
+                                        <text x="40" y="125" class="data-text">10110101 01011010 11001100</text>
+                                        <rect x="240" y="110" width="30" height="20" class="crc-value"></rect>
+                                        <text x="245" y="125" class="crc-text">CRC</text>
+                                        <text x="15" y="125" class="method-label">CRC</text>
+                                        
+                                        <!-- Hamming Code -->
+                                        <rect x="30" y="150" width="240" height="20" class="hamming-container"></rect>
+                                        <text x="40" y="165" class="data-text">1</text>
+                                        <text x="50" y="165" class="parity-text">P</text>
+                                        <text x="60" y="165" class="data-text">0</text>
+                                        <text x="70" y="165" class="parity-text">P</text>
+                                        <text x="80" y="165" class="data-text">1</text>
+                                        <text x="90" y="165" class="data-text">1</text>
+                                        <text x="100" y="165" class="parity-text">P</text>
+                                        <text x="110" y="165" class="data-text">0</text>
+                                        <text x="120" y="165" class="data-text">1</text>
+                                        <text x="130" y="165" class="data-text">0</text>
+                                        <text x="140" y="165" class="data-text">1</text>
+                                        <text x="15" y="165" class="method-label">Hamming</text>
+                                        
+                                        <!-- Error Indication -->
+                                        <circle cx="90" cy="165" r="8" class="error-indicator" fill="none" stroke="red" stroke-width="2"></circle>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Elementary Data Link Protocols</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>Unrestricted simplex protocol is the simplest protocol where data flows in only one direction with no flow control or error recovery.</li>
+                                <li>Stop-and-wait protocol requires the sender to wait for an acknowledgment (ACK) after each frame before sending the next one.</li>
+                                <li>Go-Back-N protocol allows the sender to transmit multiple frames before receiving acknowledgments, using a sliding window approach.</li>
+                                <li>Selective Repeat protocol allows the receiver to accept and buffer frames received out of order, requesting retransmission only for specific lost frames.</li>
+                                <li>These protocols provide different trade-offs between efficiency, complexity, and reliability in data transmission.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container protocols-animation">
+                                <!-- SVG Animation for Data Link Protocols -->
+                                <svg viewBox="0 0 300 200" class="protocols-svg">
+                                    <g class="protocol-elements">
+                                        <!-- Sender and Receiver -->
+                                        <rect x="30" y="30" width="40" height="140" rx="5" class="protocol-node sender"></rect>
+                                        <rect x="230" y="30" width="40" height="140" rx="5" class="protocol-node receiver"></rect>
+                                        <text x="50" y="20" class="node-label">Sender</text>
+                                        <text x="250" y="20" class="node-label">Receiver</text>
+                                        
+                                        <!-- Timeline -->
+                                        <line x1="50" y1="40" x2="50" y2="170" class="timeline"></line>
+                                        <line x1="250" y1="40" x2="250" y2="170" class="timeline"></line>
+                                        
+                                        <!-- Stop-and-Wait Protocol -->
+                                        <line x1="50" y1="60" x2="250" y2="80" class="protocol-message frame1"></line>
+                                        <text x="140" y="65" class="message-label">Frame 1</text>
+                                        <line x1="250" y1="90" x2="50" y2="110" class="protocol-message ack1" stroke-dasharray="5,5"></line>
+                                        <text x="140" y="95" class="message-label">ACK 1</text>
+                                        
+                                        <line x1="50" y1="120" x2="250" y2="140" class="protocol-message frame2"></line>
+                                        <text x="140" y="125" class="message-label">Frame 2</text>
+                                        <line x1="250" y1="150" x2="50" y2="170" class="protocol-message ack2" stroke-dasharray="5,5"></line>
+                                        <text x="140" y="155" class="message-label">ACK 2</text>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Medium Access Control</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>Medium Access Control (MAC) protocols determine how multiple devices share a common transmission medium without interference.</li>
+                                <li>CSMA/CD (Carrier Sense Multiple Access with Collision Detection) is used in traditional Ethernet, where devices listen before transmitting and detect collisions.</li>
+                                <li>CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance) is used in wireless networks to minimize the probability of collisions.</li>
+                                <li>Token-based protocols pass a special token among devices, and only the device holding the token can transmit data.</li>
+                                <li>Polling protocols have a central controller that invites each device in turn to transmit data, eliminating contention.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container mac-animation">
+                                <!-- SVG Animation for Medium Access Control -->
+                                <svg viewBox="0 0 300 200" class="mac-svg">
+                                    <g class="mac-elements">
+                                        <!-- Shared Medium -->
+                                        <rect x="30" y="100" width="240" height="10" class="shared-medium"></rect>
+                                        
+                                        <!-- Devices -->
+                                        <rect x="40" y="50" width="30" height="30" rx="3" class="mac-device device1"></rect>
+                                        <rect x="100" y="50" width="30" height="30" rx="3" class="mac-device device2"></rect>
+                                        <rect x="160" y="50" width="30" height="30" rx="3" class="mac-device device3"></rect>
+                                        <rect x="220" y="50" width="30" height="30" rx="3" class="mac-device device4"></rect>
+                                        
+                                        <!-- Connections to Medium -->
+                                        <line x1="55" y1="80" x2="55" y2="100" class="device-connection"></line>
+                                        <line x1="115" y1="80" x2="115" y2="100" class="device-connection"></line>
+                                        <line x1="175" y1="80" x2="175" y2="100" class="device-connection"></line>
+                                        <line x1="235" y1="80" x2="235" y2="100" class="device-connection"></line>
+                                        
+                                        <!-- CSMA/CD Collision -->
+                                        <circle cx="145" cy="105" r="15" class="collision-indicator"></circle>
+                                        <path d="M135 95 L155 115 M155 95 L135 115" class="collision-symbol"></path>
+                                        
+                                        <!-- Data Packets -->
+                                        <rect x="85" y="95" width="20" height="20" class="mac-packet packet1"></rect>
+                                        <rect x="195" y="95" width="20" height="20" class="mac-packet packet2"></rect>
+                                        
+                                        <!-- Token Ring -->
+                                        <circle cx="150" cy="170" r="30" class="token-ring" fill="none"></circle>
+                                        <circle cx="120" cy="170" r="5" class="token-device"></circle>
+                                        <circle cx="150" cy="140" r="5" class="token-device"></circle>
+                                        <circle cx="180" cy="170" r="5" class="token-device"></circle>
+                                        <circle cx="150" cy="200" r="5" class="token-device"></circle>
+                                        <circle cx="135" cy="155" r="3" class="token"></circle>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="topic-accordion">
+                    <div class="topic-header">
+                        <h3>Link Layer Addressing</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-text">
+                            <ul>
+                                <li>MAC addresses are 48-bit hardware addresses permanently assigned to network interfaces by manufacturers.</li>
+                                <li>Unlike IP addresses, MAC addresses are flat (non-hierarchical) and are used for communication within the same network segment.</li>
+                                <li>Address Resolution Protocol (ARP) maps IP addresses to MAC addresses, enabling communication between the network and data link layers.</li>
+                                <li>Switches maintain MAC address tables to efficiently forward frames only to the port where the destination device is connected.</li>
+                                <li>Special MAC addresses are used for broadcast (FF:FF:FF:FF:FF:FF) and multicast communication within a local network.</li>
+                            </ul>
+                        </div>
+                        <div class="topic-animation">
+                            <div class="animation-container addressing-animation">
+                                <!-- SVG Animation for Link Layer Addressing -->
+                                <svg viewBox="0 0 300 200" class="addressing-svg">
+                                    <g class="addressing-elements">
+                                        <!-- Network Interface Cards -->
+                                        <rect x="30" y="40" width="80" height="40" rx="5" class="nic nic1"></rect>
+                                        <rect x="190" y="40" width="80" height="40" rx="5" class="nic nic2"></rect>
+                                        
+                                        <!-- MAC Addresses -->
+                                        <text x="70" y="65" class="mac-address">00:1A:2B:3C:4D:5E</text>
+                                        <text x="230" y="65" class="mac-address">00:6F:7G:8H:9I:0J</text>
+                                        
+                                        <!-- IP Addresses -->
+                                        <text x="70" y="30" class="ip-address">192.168.1.10</text>
+                                        <text x="230" y="30" class="ip-address">192.168.1.20</text>
+                                        
+                                        <!-- ARP Process -->
+                                        <rect x="30" y="120" width="240" height="60" rx="5" class="arp-container"></rect>
+                                        <text x="150" y="140" class="arp-title">ARP Table</text>
+                                        <text x="60" y="160" class="arp-entry">IP: 192.168.1.20</text>
+                                        <text x="200" y="160" class="arp-entry">MAC: 00:6F:7G:8H:9I:0J</text>
+                                        
+                                        <!-- ARP Request/Reply -->
+                                        <path d="M70 90 C70 110, 150 110, 230 90" class="arp-request" stroke-dasharray="5,5"></path>
+                                        <text x="150" y="100" class="arp-label">ARP Request/Reply</text>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy;2025 Aayush study resources</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
